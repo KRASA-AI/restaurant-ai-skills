@@ -13,14 +13,22 @@ This repo is a complete AI toolkit for restaurants. Every skill is a standalone 
 
 | Skill | What it does | Time saved |
 |-------|-------------|------------|
-| 🍽️ Menu Description Writer | Turn ingredient lists into appetizing, on-brand menu descriptions. | ~5 min/item |
-| 📋 Shift Prep Checklist | Generate a daily prep list based on reservations, specials, and par levels. | ~15 min/shift |
-| 🤝 Supplier Negotiation Brief | Summarize price trends and usage data to prepare for vendor calls. | ~20 min/vendor |
-| ⭐ Review Response Drafter | Craft professional, personalized responses to online reviews — positive and negative. | ~5 min/review |
-| 🔍 Health Inspection Prep | Run through inspection criteria and flag items that need attention before the visit. | ~30 min/prep |
-| 📸 Social Media Post Generator | Create photo captions, event announcements, and seasonal promotions for your channels. | ~10 min/post |
+| Demand Forecast Briefing | Produce a weekly (or event-specific) demand forecast that estimates covers by day-part, projects top-selling items, and highlights external factors — giving the kitchen and FOH teams a single planning reference for prep, purchasing, and staffing. | ~30 min/week |
+| Food Waste Reduction Planner | Analyze sales history, inventory levels, and upcoming events to produce a weekly waste-reduction action plan — including prep-quantity recommendations, ingredient-use-by priorities, and creative specials to move aging stock. | ~45 min/week |
+| Health Inspection Prep | Conduct a comprehensive pre-inspection audit using FDA Food Code standards, identifying compliance gaps across temperature control, sanitation, documentation, and personnel health policies — tailored to inspection jurisdiction and type (routine, complaint-driven, follow-up). | ~30 min/prep |
+| Shift Prep Checklist | Generate a customized prep list for morning, afternoon, or night shifts — including mise en place quantities, station assignments, equipment checks, 86'd items, specials prep, reservation intelligence (VIPs, allergies, large parties), and FIFO rotation priorities. | ~15 min/shift |
+| Menu Description Writer | Turn a dish's ingredient list, cooking method, and sourcing story into a concise menu description that sells the plate — using sensory language, cuisine-appropriate vocabulary, menu-engineering psychology, and compliant allergen/dietary callouts — formatted to the exact length and style conventions of the restaurant's menu format (print, digital, POS, third-party delivery). | ~8 min/item |
+| Social Media Post Generator | Create platform-specific social media content (Instagram, TikTok, Facebook, LinkedIn) with tailored captions, hashtag strategy, CTAs, and optimal posting guidance — covering dish features, behind-the-scenes moments, staff spotlights, event promos, and seasonal campaigns with restaurant industry best practices. | ~10 min/post |
+| AI Phone Agent Playbook | Design a production-ready conversation playbook for an AI phone or voice agent that answers restaurant calls 24/7 — handling takeout orders, reservation booking/modification/cancellation, FAQ answers, and branded upsell prompts — while routing edge cases to a human and respecting POS and reservation-platform integration constraints. | ~3 hrs/deployment |
+| Review Response Drafter | Turn a guest review into a platform-appropriate public response that repairs trust (for negatives), amplifies loyalty (for positives), and signals to prospective diners reading the thread that the restaurant listens, owns mistakes, and resolves issues — with clear escalation logic for reviews that should move offline, be flagged to the platform, or trigger a legal/insurance review. | ~8 min/review |
+| Dynamic Menu Pricing Advisor | Evaluate current menu prices against ingredient costs, local demand signals, and competitive benchmarks to recommend data-informed price adjustments — including day-part pricing, event-based surcharges, and margin-recovery opportunities. | ~1 hr/pricing review |
+| Staff Schedule Optimizer | Build a labor-efficient weekly schedule that aligns staffing levels with forecasted demand, respects labor-law constraints, balances employee preferences, and keeps labor cost within target percentage of projected revenue. | ~1 hr/schedule |
+| Supplier Negotiation Brief | Prepare a data-backed negotiation brief for an upcoming vendor conversation — combining 12-week price and usage trends, market benchmarks, contract terms, and leverage points — so the GM or owner walks into the call with specific asks, concession targets, and walk-away thresholds that protect COGS and service levels. | ~45 min/vendor |
+| Email Drafter | Turn rough notes into a professional email matching your company's voice and tone. | ~10 min/use |
+| Meeting Summarizer | Summarize meeting notes into action items, decisions, and follow-ups. | ~10 min/use |
+| Review Responder | Craft professional responses to online reviews — both positive and negative. | ~10 min/use |
 
-**Total time saved per use: ~85+ minutes across all skills.**
+**Total time saved per use: ~221+ minutes across all skills.**
 
 ## Quick Start
 
