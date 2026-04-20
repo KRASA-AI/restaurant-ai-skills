@@ -18,6 +18,8 @@ Design a production-ready conversation playbook for an AI phone or voice agent t
 
 Use this skill when rolling out an AI phone answering service (Loman, Newo, Certus, Yelp Host, Hostie, or a custom Voiceflow/Retell build) for a single restaurant or multi-unit group. Run it again whenever menu, hours, reservation policy, or upsell priorities change. It works best after the Dynamic Menu Pricing Advisor and Demand Forecast Briefing have been run, so upsell logic can reflect current margin targets and capacity.
 
+**Scope note:** This playbook is for full-service phone, host, and reservation voice agents. For QSR drive-thru voice AI rollouts (Presto, Hi Auto, ConverseNow, Incept AI, Toast Drive-Thru, etc.), use `customer-service/drive-thru-ai-rollout-playbook.md` instead — the menu-complexity bounding, SoS targets, advance order confirmation screen integration, pickup-window monitoring, and franchisee governance patterns are distinct.
+
 ## Required Input
 
 Provide the following:
