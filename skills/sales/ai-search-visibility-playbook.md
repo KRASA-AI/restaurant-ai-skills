@@ -18,6 +18,8 @@ Produce a location-specific playbook that makes a restaurant surfaceable, citabl
 
 Run this playbook when opening a new location, relaunching the website, noticing a drop in direct reservations, rolling out a new reservation partner, being asked "why don't we show up when I ask ChatGPT for brunch near me," before a major holiday booking window (Valentine's, Mother's Day, Restaurant Week), or any time the concept's positioning (cuisine, daypart, vibe, dietary specialty) materially changes. Pairs with Digital Menu Optimization Brief (which covers third-party delivery storefronts) and Social Media Post Generator (which covers social discovery); this skill covers AI-driven discovery and agentic booking flows.
 
+**Scope note:** This playbook covers discovery, citation, and reservation-capture through AI answer engines. If the brand is shipping a first-party ordering app inside ChatGPT, Gemini, Claude, or Perplexity — or evaluating whether to allow a direct-ordering aggregator (e.g., Bites) to fulfill orders inside the assistant — use the Agentic Ordering App Readiness Brief instead. The two skills are complementary: this one gets the guest to ask for the restaurant; that one handles what happens when the guest asks to order.
+
 ## Required Input
 
 Provide the following:
