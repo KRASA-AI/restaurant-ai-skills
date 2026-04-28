@@ -18,6 +18,8 @@ Produce a weekly (or event-specific) demand forecast that estimates covers by da
 
 Run this skill every week during Sunday or Monday planning, in front of holidays and major local events (Valentine's, Mother's Day, Restaurant Week, city-wide festivals, home playoff games, conferences), before a menu launch or LTO window, after a price or hours change when the trailing baseline is unreliable, or when weather forecasts shift materially mid-week. Pair with Staff Schedule Optimizer (downstream for labor) and Food Waste Reduction Planner (downstream for prep and purchasing) so the three skills share one demand assumption.
 
+Scope note: this brief is the weekly forecast and the single-event pre-brief. For a multi-week mega-event surge — most prominently the FIFA World Cup 2026 (June 11 – July 19, 2026, 16 host cities), but the same applies to a future Olympics, Super Bowl host-week, or sustained festival series — use the World Cup 2026 Surge Playbook for the multi-week match-window calendar, multilingual operations layer, surge staffing pipeline, supply-chain stress test, and after-tournament wind-down. The Surge Playbook calls Demand Forecast Briefing as a daily / weekly sub-routine; the two are complementary.
+
 ## Required Input
 
 Provide the following:

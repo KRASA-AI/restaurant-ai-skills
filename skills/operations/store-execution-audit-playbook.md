@@ -20,6 +20,8 @@ Run this playbook when a multi-unit operator is rolling out an AI photo-verifica
 
 Scope is ongoing brand-standards execution visibility across a multi-unit footprint. For regulatory pre-inspection work (FDA Food Code, HACCP readiness, health-department violation risk), use the Health Inspection Prep skill — this playbook is complementary, not redundant. For station-level pre-shift setup (mise en place, 86 board, par levels, station assignments), use the Shift Prep Checklist skill — this playbook audits what Shift Prep Checklist produces. For labor scheduling in response to chronic store-level execution gaps, hand off to the Staff Schedule Optimizer. For menu-item LTO compliance photos as a marketing surface (not an operational one), pair with the Social Media Post Generator's image direction. Together with Health Inspection Prep and Shift Prep Checklist, this playbook forms the complete operations-quality triangle (regulatory readiness, shift-start execution, and ongoing above-store audit).
 
+**Scope note (2026-04-27):** For brand-side strategy and configuration of an automated-kiosk distribution channel (operator-owned vs. platform-managed deployment, venue-type prioritization, kiosk SKU pack engineering, AI-tooling stack for remote operations, regulatory and food-safety posture per remote site, brand-experience consistency rules, platform-partner contract checklist), use the Automated Kiosk Deployment Brief — this playbook is then reusable as the quarterly fleet-audit cadence on the kiosk fleet, with the kiosk fleet pre-loaded as the audit target.
+
 ## Required Input
 
 Provide the following:

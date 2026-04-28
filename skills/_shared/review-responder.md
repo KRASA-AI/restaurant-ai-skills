@@ -4,7 +4,7 @@ category: _shared
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~3 min/review"
-version: 1.1
+version: 1.2
 last_eval_score: null
 supersedes_note: "Use customer-service/review-response-drafter.md for severity-triaged, multi-platform, or high-risk reviews (allergy, injury, legal threat, 1-star patterns). This skill is intentionally the fast lane for the everyday majority."
 ---
@@ -82,4 +82,79 @@ Scan for any of these keywords or themes: allergy, allergic, reaction, ER, hospi
 
 ## Example Output
 
-> [This section will be populated by the eval system with a reference example. For now, run the skill with sample input to see output quality.]
+### Example 1 — Google, 5-star brunch praise
+
+**Input:**
+- Platform: Google
+- Star rating: 5
+- Reviewer: Jenna H.
+- Review text: "Brought my mom for her birthday brunch. Our server Diego made it special — he caught that she's gluten-free without us flagging it and walked her through every dish. The lemon ricotta pancakes were unreal and the patio was perfect. We'll be back!"
+- Specifics to echo: Diego (server), lemon ricotta pancakes, mom's birthday, patio
+- Brand voice: warm-neighborhood
+- Signer: Maria López, GM
+
+**Severity gate:** pass — no safety, allergy-incident, legal, or low-star-pattern triggers (the gluten-free mention is praise, not a reaction report).
+
+**Primary reply (Google, 94 words):**
+
+> Jenna — thank you for trusting us with your mom's birthday. Diego is going to be glad to hear his name today; reading the room on dietary needs without making a guest ask is exactly what we want from the floor. The lemon ricotta pancakes are a Sundays-only run from our pastry lead, so you found the right morning. When peaches land in late June we run a stone-fruit version of the same pancake — worth a return trip. Tell your mom happy birthday from all of us, and welcome back any time.
+>
+> — Maria, GM
+
+**Alternate (warmer, 71 words):**
+
+> Jenna — what a wonderful thing to read. Diego will be over the moon, and our pastry team will be too — the lemon ricotta pancakes are their Sundays-only project. Birthday brunches on the patio are the reason we open Sunday mornings. Happy birthday to your mom from all of us, and come back for our stone-fruit pancake run when peaches land in late June.
+>
+> — Maria, GM
+
+---
+
+### Example 2 — Yelp, 3-star, mixed (food praise + service complaint)
+
+**Input:**
+- Platform: Yelp
+- Star rating: 3
+- Reviewer: Marcus T.
+- Review text: "Food was great — the short rib pappardelle is excellent. But we waited 25 minutes past our reservation on a Tuesday night and nobody acknowledged the delay. For the price point, the service should match the kitchen."
+- Specifics to echo: short rib pappardelle, 25-minute wait, Tuesday
+- Brand voice: polished-upscale
+- Signer: Maria López, GM
+
+**Severity gate:** pass — operational complaint without injury, allergy, discrimination, or legal content. Worth an offline follow-up given the bill-to-experience mismatch.
+
+**Primary reply (Yelp, 88 words — no contact info per Yelp policy):**
+
+> Marcus — the short rib pappardelle is one of Chef Reyes's signatures, so I'm glad it landed. Your point about the wait is fair, and a 25-minute gap on a Tuesday without an acknowledgment is below the standard we set — particularly at our price point, as you note. I'd like to look into what happened that night. I'll send a private message through Yelp so we can match the reservation and come back to you with what we found and how we'll pace your next visit.
+>
+> — Maria, GM
+
+**Alternate (more concise, 62 words):**
+
+> Marcus — glad the short rib pappardelle landed; that's Chef Reyes's signature. Your wait is a fair call — 25 minutes without an acknowledgment falls short of where we set the bar. I'll DM you through Yelp so we can match the reservation, look into the specific night, and pace your next visit the way it should have been.
+>
+> — Maria, GM
+
+**Private-channel handoff:** Hand off to `_shared/email-drafter.md` with scenario = "complaint follow-up (moved from review)" once Marcus replies via Yelp DM with the reservation date. Do not offer comp / discount in the public reply.
+
+---
+
+### Example 3 — DoorDash, 4-star, packaging complaint
+
+**Input:**
+- Platform: DoorDash
+- Star rating: 4
+- Reviewer: Priya S.
+- Review text: "Korean fried chicken was crispy even after the drive home, but the kimchi container leaked into the bag. Loved the food, just clean up the packaging."
+- Specifics to echo: Korean fried chicken stayed crispy, kimchi leak
+- Brand voice: playful-fast-casual
+- Signer: Sam Park, GM
+
+**Severity gate:** pass — packaging complaint, not a food-safety incident.
+
+**Primary reply (DoorDash, 47 words — logistics-focused):**
+
+> Priya — keeping the KFC crispy in the bag is the whole challenge, glad it held. The kimchi leak is on us; we just rolled out a new vented lid for the side containers this week and yours went out before the swap. Next order is on track. Thanks for the heads-up.
+>
+> — Sam, GM
+
+**Severity-gate tag:** pass for all three examples.
