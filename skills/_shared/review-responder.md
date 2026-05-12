@@ -4,8 +4,8 @@ category: _shared
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~3 min/review"
-version: 1.2
-last_eval_score: null
+version: 1.3
+last_eval_score: 8.50
 supersedes_note: "Use customer-service/review-response-drafter.md for severity-triaged, multi-platform, or high-risk reviews (allergy, injury, legal threat, 1-star patterns). This skill is intentionally the fast lane for the everyday majority."
 ---
 
@@ -64,6 +64,15 @@ Scan for any of these keywords or themes: allergy, allergic, reaction, ER, hospi
 6. **3-star nuance** — A 3-star review usually has one praise and one complaint. Acknowledge both honestly. If the complaint is minor (wait time on a Saturday, a loud table nearby), contextualize briefly without excusing. If the complaint is operational (order accuracy, temperature), move the specific follow-up offline with a single, short line pointing to gm@[restaurant].com.
 
 7. **Pre-publish check** — Read aloud. Verify: reviewer's first name spelled right; dish names spelled exactly as on the menu; no "sorry you feel that way"; no generic gratitude; no comp or discount in public; no competitor mention; no defensiveness; one specific echo from the review; signed by a real person.
+
+8. **Multilingual reviews** — If the review is written in a language other than English, reply in that same language. Do not switch the reviewer to English. Rules:
+   - Detect the review language before drafting. Common restaurant review languages: Spanish (ES), Portuguese (PT), French (FR), Japanese (JA), Korean (KO), Mandarin (ZH), German (DE), Italian (IT), Arabic (AR).
+   - Use the same platform-specific word count targets; the reviewer's language is not an excuse to be longer or shorter.
+   - Dish names: keep them as printed on the menu (do not translate menu item names). Staff names: keep as-is.
+   - Avoid machine-translated clichés — when in doubt, use short, direct sentences that localize cleanly.
+   - **World Cup 2026 note:** Venues in or near the 16 host cities (New York/NJ, Los Angeles, Dallas, San Francisco, Seattle, Miami, Atlanta, Boston, Philadelphia, Kansas City, Houston, Los Angeles, Vancouver, Mexico City, Guadalajara, Monterrey, Toronto) should expect a surge of reviews in Spanish (MX/AR/CO/UY/CL/ES), Portuguese (BR/PT), and French (FR) from June 2026 onward. Prepare a brief on-brand ES and PT reply template for your two or three highest-reviewed menu items now.
+   - If the review mixes languages (Spanglish, code-switching), match the dominant language and preserve any English brand terms (e.g., a menu item name or the restaurant name) unchanged.
+   - The severity gate applies in all languages — trigger words in any language require redirect to `customer-service/review-response-drafter.md`.
 
 **Output requirements:**
 - Primary reply (ready to paste), labeled with platform and word count
@@ -158,3 +167,33 @@ Scan for any of these keywords or themes: allergy, allergic, reaction, ER, hospi
 > — Sam, GM
 
 **Severity-gate tag:** pass for all three examples.
+
+---
+
+### Example 4 — Google, 5-star, Spanish-language review (multilingual path)
+
+**Input:**
+- Platform: Google
+- Star rating: 5
+- Reviewer: Carlos M.
+- Review text: "Increíble experiencia. El risotto de hongos silvestres fue lo mejor que he comido en mucho tiempo. Diego nos atendió perfecto y la terraza por la noche es mágica. Definitivamente volvemos."
+- Specifics to echo: risotto de hongos silvestres, Diego (server), terraza
+- Brand voice: warm-neighborhood
+- Signer: Maria López, GM
+- Language detected: Spanish (ES)
+
+**Severity gate:** pass — praise-only review, no safety or legal content in any language.
+
+**Primary reply (Google, Spanish, 91 words):**
+
+> Carlos — gracias por tomarte el tiempo de escribirnos. Diego va a sonreír cuando lea esto; saber que el servicio estuvo a la altura del risotto hace que todo valga la pena. Los hongos silvestres llegan frescos cada semana de nuestro proveedor local, así que cada vez que vengas hay buenas chances de que el plato sea distinto pero igual de bueno. La terraza en las noches de verano es nuestra parte favorita de la casa — te esperamos de vuelta cuando quieras.
+>
+> — Maria, GM
+
+**Alternate (more concise, Spanish, 63 words):**
+
+> Carlos — qué alegría leer esto. Diego y el equipo de la terraza van a estar muy contentos. El risotto de hongos silvestres cambia un poco cada semana según lo que llega del proveedor — razón de más para volver. La terraza en verano es imposible de superar. Los esperamos pronto.
+>
+> — Maria, GM
+
+**Multilingual handling note:** Dish name ("risotto de hongos silvestres") kept as on the menu — no translation needed here because the Spanish name and the menu name align. Staff name (Diego) unchanged. No machine-translated boilerplate used.

@@ -4,8 +4,8 @@ category: _shared
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~10 min/email"
-version: 1.2
-last_eval_score: null
+version: 1.3
+last_eval_score: 8.60
 ---
 
 # ✉️ Email Drafter (Restaurant)
@@ -22,7 +22,7 @@ Use this skill for any outbound email that carries money, reputation, or operati
 
 Provide the following:
 
-1. **Scenario** — One of: vendor dispute, vendor QBR follow-up, reservation change/cancellation, VIP outreach, complaint follow-up (moved from review), staff memo, landlord/property notice, insurance/claim letter, health-department correspondence, private-event proposal, BEO confirmation, catering quote, PR/influencer outreach, press response, gift-card resolution, lost-and-found, bill dispute, collections on a house account
+1. **Scenario** — One of: vendor dispute, vendor QBR follow-up, reservation change/cancellation, VIP outreach, complaint follow-up (moved from review), staff memo, staff-discipline notice or performance action, landlord/property notice, insurance/claim letter, health-department correspondence, health-inspection corrective-action follow-up, private-event proposal, BEO confirmation, catering quote, PR/influencer outreach, press response, gift-card resolution, lost-and-found, bill dispute, collections on a house account
 2. **Recipient** — Name, role (rep, guest, team, landlord, adjuster, inspector, reporter, influencer), relationship history (new, long-standing, rocky)
 3. **Context / facts** — Dates, dollar amounts, invoice or reservation numbers, SKUs, guest names, dish or service specifics, what has already been said or offered
 4. **Desired outcome** — Specific ask (credit dollar amount, policy waiver, meeting slot, written response, apology, silence with legal review, booking confirmation)
@@ -69,7 +69,14 @@ You are a restaurant GM's executive writer. You write like a hospitality operato
     - Press / influencer: 80–140 words — short, respectful, pitch the story not the deal
     - Legal / insurance: 100–150 words, neutral tone, attorney review flagged
 
-11. **Pre-send review** — Read aloud. Remove any sentence the owner would not want screenshotted. Remove hedges, remove thank-yous that sound hollow, spell-check every dish and vendor name, verify dollar amounts match the invoice, and verify the subject line still matches the final body.
+11. **Non-English correspondence** — When the recipient's primary language is not English (common cases: a Spanish-speaking DSR or produce vendor, a Portuguese-speaking media contact, a French-speaking inspector in a bilingual jurisdiction):
+    - Draft in the recipient's language. Keep dish names, menu terms, and the restaurant's brand name in their canonical form (do not translate brand names).
+    - Short vendor and reservation emails (Scenarios 1 and 3): apply the same word-count targets; shorter is still better.
+    - High-risk emails (allergy, legal, inspector): draft in both English AND the recipient's language; flag both for owner/counsel sign-off. The English version is the legal record.
+    - Compliance note: if the email is a staff memo, check whether your state or city requires written notices in the employee's primary language (California, Illinois, New York City, and Washington require Spanish/bilingual notices for certain wage and safety notices).
+    - For the World Cup 2026 surge period (June–July 2026), venues near host cities should prepare a short Spanish-language VIP outreach template for large reservation inquiries arriving via WhatsApp or Google Business Messages.
+
+12. **Pre-send review** — Read aloud. Remove any sentence the owner would not want screenshotted. Remove hedges, remove thank-yous that sound hollow, spell-check every dish and vendor name, verify dollar amounts match the invoice, and verify the subject line still matches the final body.
 
 **Output requirements:**
 - Primary draft ready to send, with subject line, opener, ask, supporting facts, next step, and signature
@@ -81,6 +88,54 @@ You are a restaurant GM's executive writer. You write like a hospitality operato
 - Private-channel handoff template when the email is replacing a public review reply
 - Correct terminology consistent with `knowledge-base/terminology/`
 - Saved to `outputs/` if the user confirms
+
+### Example 4 — Health-inspection corrective-action staff memo (moderate risk)
+
+**Input:**
+- Scenario: staff memo — health-inspection corrective-action follow-up
+- Recipient: all FOH and BOH staff at [Restaurant Name]
+- Context: Routine unannounced inspection on 2026-05-08. Inspector cited two violations: (1) hand-washing station in the pantry station blocked by a speed rack — Risk Factor 3 (employee health and hygiene, corrected on site during inspection); (2) walk-in shelving unit holding cooked proteins at 41.5°F vs. 41°F hard limit — non-critical, requires correction within 10 days. No critical violations. Score: 88 (B). Re-inspection scheduled for 2026-05-18.
+- Desired outcome: inform the full team of findings, confirm corrective actions taken, state the re-inspection date and expectations
+- Tone: professional, direct, no alarm — this is a routine B score with minor findings
+- Constraints: do not include the inspector's name or badge number in a distribution email; do not promise a score on re-inspection; CC owner and GM; this memo should be appropriate for a printed line-team version too
+- Attachments: none — detailed report retained in GM office per house records policy
+
+**Risk-tier tag:** moderate. GM may send. Owner CC required per house policy on all inspection communications.
+
+**Subject:** Health inspection 5/8 — findings, corrective actions, re-inspection 5/18
+
+**Primary draft (172 words):**
+
+> Team,
+>
+> We had an unannounced health inspection on Thursday, May 8. Here's exactly what happened and what we've already fixed.
+>
+> **What was cited:**
+>
+> 1. **Hand-wash station blocked (pantry station)** — A speed rack was in front of the hand-wash sink. Fixed on the spot during inspection; the rack has a permanent new home on the dry-storage side of the station as of Thursday PM. This one lives on our pre-shift checklist starting tonight.
+>
+> 2. **Walk-in protein shelf temperature — 41.5°F vs. 41°F** — Non-critical. Reyes has ordered a replacement shelf liner and adjusted the thermostat setpoint; walk-in is reading 40.2°F as of this morning. We have 10 days to close this; it's already done.
+>
+> **Score: 88 (B).** Re-inspection: May 18.
+>
+> The standard for May 18 is exactly what it was before May 8: clean stations, clear sinks, and cold product in spec. Nothing changed — just a reminder that the inspectors can walk in any day.
+>
+> Maria López, GM
+
+**Risk-tier tag:** moderate — no owner/attorney sign-off needed; GM may send.
+
+**CC list:**
+- Owner ([owner_name]) — required per house policy on all inspection communications
+- Chef Reyes — named owner of the walk-in fix
+
+**Compliance flags applied:**
+- Inspector's name and badge number kept out of the distribution email (included only in the GM's confidential file copy)
+- No score promise made for the re-inspection
+- Corrective action language is factual and non-defensive
+
+**Follow-up reminder:** "Team — re-inspection is Monday the 18th. Pre-shift station-check protocol goes out Sunday PM." (send as a brief verbal pre-shift reminder, not a second full email)
+
+---
 
 ## Related Skills
 

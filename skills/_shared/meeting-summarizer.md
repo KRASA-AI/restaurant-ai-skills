@@ -4,8 +4,8 @@ category: _shared
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~15 min/meeting"
-version: 1.2
-last_eval_score: null
+version: 1.3
+last_eval_score: 8.60
 ---
 
 # 📝 Meeting Summarizer (Restaurant)
@@ -59,7 +59,7 @@ You are a restaurant chief-of-staff who has taken notes at thousands of shifts, 
 
 8. **Vendor QBR specific structure** — For QBRs, structure as: spend vs. forecast, service-level KPIs (fill rate, on-time %, short-ships), price movement vs. commodity index, contract issues, product quality incidents, upcoming launches or menu changes, and asks (from us to them, and from them to us).
 
-9. **Health-inspector / incident debrief structure** — For post-inspection or incident reviews: factual narrative, code citations or incident category, immediate corrective actions taken that shift, documented follow-up actions with owners and due dates, training implications, escalation path, owner/legal/insurance notification status, and retention plan for records.
+9. **Health-inspector / incident debrief structure** — For post-inspection or incident reviews: factual narrative, code citations or incident category, immediate corrective actions taken that shift, documented follow-up actions with owners and due dates, training implications, escalation path, owner/legal/insurance notification status, and retention plan for records. Note: produce two versions — the internal recap (full detail, retained in GM files) and the staff distribution version (corrective actions + expectations only, no inspector name/badge number). For re-inspection tracking, include a countdown-to-re-inspection callout at the top of the staff version.
 
 10. **Open-items tracker** — Include a short table of open items from prior meetings with status (closed / in-progress / blocked / dropped) and the current owner. Do not let items disappear silently; if an item is dropped, say why.
 
@@ -255,3 +255,82 @@ You are a restaurant chief-of-staff who has taken notes at thousands of shifts, 
 | Credit on PO 48231 | Jordan (Sysco) | 2026-04-25 statement | Statement reflects credit |
 | Q2 cold-chain audit summary | Pat (Sysco) | 5 days before next QBR | Summary in inbox |
 | Produce-program trial extension | Reyes + Jordan | Memorial Day | Trial runs through holiday weekend |
+
+---
+
+### Example 4 — Health inspector debrief (post-inspection corrective-action meeting)
+
+**Input:**
+- Meeting type: health-inspector debrief
+- Date / day-part / location: 2026-05-08, 4:30 PM post-inspection huddle, [Restaurant Name] — back office + BOH
+- Attendees: Maria López (GM), Chef Reyes (Exec Chef), Diego (Sous), Priya (FOH manager); absent: Sam (Bar manager, day off)
+- Raw material: shorthand notes from a 20-minute debrief immediately after the 2:00–3:45 PM inspection
+- Key numbers: final score 88 (B); 2 violations cited (1 Risk Factor 3, corrected on site; 1 non-critical); re-inspection date 2026-05-18
+- Open items from last meeting: allergen card reprint (Priya, previously in progress — now confirmed completed 2026-05-05)
+- Audience: (a) internal manager recap, full; (b) staff distribution version, corrective actions only
+- Confidentiality flag: Inspector name and badge number stay in GM file only; not in the staff distribution version
+
+**Internal manager recap (debrief notes — retain in GM file, 380 words):**
+
+**Meeting title:** Post-Inspection Debrief — 2026-05-08
+**Purpose:** Close out the 2026-05-08 inspection, document the two cited violations, assign corrective-action owners and due dates, and prepare for the 2026-05-18 re-inspection.
+
+**Inspection summary:**
+- Score: 88 (B)
+- Duration: 2:00–3:45 PM, unannounced
+- Areas covered: FOH, BOH (hot and cold lines), pantry station, walk-in cooler (proteins), dry storage, hand-washing stations, dish pit, chemical storage, employee health records
+
+**Violation log:**
+
+| # | Code | Category | Description | Corrected on site? | Risk factor |
+|---|---|---|---|---|---|
+| 1 | CFR §2-301.12 | Employee health & hygiene | Pantry-station hand-wash sink blocked by speed rack | Yes — rack relocated during inspection | Risk Factor 3 |
+| 2 | CFR §3-501.16(A) | Temperature control | Walk-in protein shelf reading 41.5°F (limit 41°F) | No — correction due 2026-05-18 | Non-critical |
+
+**Immediate corrective actions taken during inspection:**
+- Speed rack moved from in front of the pantry hand-wash station to dry-storage side (Diego, completed 3:15 PM).
+- Walk-in thermostat setpoint adjusted –2°F; Reyes ordered replacement wire shelf liner with better airflow (estimated arrival 2026-05-12).
+
+**Action items table:**
+
+| Action | Owner | Due | Definition of done |
+|---|---|---|---|
+| Add pantry hand-wash station to daily pre-shift station-check | Maria | 2026-05-09 (tonight) | Item live on pre-shift checklist |
+| Walk-in replacement shelf liner installed | Reyes | 2026-05-13 | Liner in place; walk-in reading ≤ 40.5°F |
+| Walk-in temp log — twice daily readings through re-inspection | Diego (AM) + Priya (PM) | 2026-05-08–2026-05-18 | Log sheet in GM file; all readings ≤ 41°F |
+| Prep staff on hand-wash station clearing protocol | Reyes + Diego | Pre-shift 2026-05-09 | All BOH staff verbally confirmed |
+| Re-inspection prep walk (full BOH + FOH) | Maria + Reyes | 2026-05-17 PM | Walk-through checklist completed; all stations clear |
+
+**Training implications:** Revisit hand-wash station access protocol in the next monthly food-safety training block. Consider a laminated "DO NOT BLOCK" placard at the pantry station.
+
+**Owner / insurance notification:** Owner notified by text at 3:50 PM (acknowledged). No insurance notification required for a non-critical re-inspection event.
+
+**Records retention:** Full inspection report, corrective-action log, and this recap retained in GM office per local 3-year records requirement.
+
+**Risks / blockers:**
+- Walk-in liner delivery slip (vendor out of stock — Reyes is sourcing a second vendor as backup).
+- Re-inspection falls on Monday 2026-05-18; ensure the closing manager on Sunday 5/17 night runs the prep walk with Reyes.
+
+**Open-items tracker:**
+
+| Item | Status | Owner |
+|---|---|---|
+| Allergen card reprint | Closed 2026-05-05 | Priya |
+
+---
+
+**Staff distribution version (corrective actions only — 120 words, appropriate for a printed line brief):**
+
+**Re-inspection: Monday, May 18. 10 days from today.**
+
+We had a routine unannounced inspection today and scored an 88. Two things were cited — both are already being fixed.
+
+**Fixed on the spot:**
+- The speed rack was blocking the pantry hand-wash sink. It has a new home. Keep that sink clear, always.
+
+**Fixed this week:**
+- Walk-in was 0.5°F above the cold limit. Thermostat adjusted; replacement shelf liner arrives Tuesday. Diego and Priya are logging temps twice a day until the 18th.
+
+**What this means for you:** Same standards as every shift. Pre-shift station-check now includes a hand-wash station clear confirmation at the pantry. No change to service flow.
+
+**Questions: see Maria or Reyes.**
