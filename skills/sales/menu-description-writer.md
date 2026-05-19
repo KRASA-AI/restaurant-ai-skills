@@ -4,8 +4,8 @@ category: sales
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~8 min/item"
-version: 1.2
-last_eval_score: 8.50
+version: 1.3
+last_eval_score: 8.90
 ---
 
 # 🍽️ Menu Description Writer
@@ -68,6 +68,8 @@ You are a menu copywriter with experience writing for James Beard–level kitche
 11. **SEO and delivery-platform tuning** — For delivery platforms, front-load the searchable noun ("Margherita Pizza — San Marzano tomato, fior di latte, basil"). Include at least one high-intent keyword (chicken sandwich, vegan bowl, poke, burrito) near the start. Avoid punctuation that breaks platform truncation.
 
 12. **Final read-aloud check** — Every description must sound natural when read aloud by a server. If a sentence stumbles the tongue, rewrite it.
+
+13. **Multilingual descriptions (when required)** — For operators in World Cup 2026 host cities (LA / SF / SEA / KC / DAL / HOU / ATL / NYC-NJ / BOS / PHL / MIA + the three CA, MX, US co-host markets), bilingual EN/ES (and EN/PT for Brazil-match windows) menu inserts are now a guest-facing expectation during the June 11 – July 19 window. Rules: (a) draft directly in the target language — never machine-translate; (b) preserve dish names exactly as they appear on the EN menu (italicize foreign terms once, no double-italics in the translated line); (c) preserve allergen badge convention identically across both languages — (GF) (V) (VG) (DF) (NF) stay the same; (d) preserve provenance proper nouns exactly (Frantoia, Mangalitsa, Oaxaca, San Marzano D.O.P. — these are not translated); (e) match target-language guest expectations on spice-ladder vocabulary (ES "suave / medio / picante / muy picante"; PT "suave / médio / picante / muito picante"); (f) for tasting-menu courses, the ES/PT line is the same target word count as the EN line (±10%); (g) for delivery platforms in bilingual markets, both languages on the same item line if the platform allows (DoorDash US Spanish-language toggle live since 2024; Uber Eats since 2025); (h) high-risk claims ("organic," "wild-caught," "GF available," "no shared fryer") translate verbatim and carry the same compliance audit as the EN line.
 
 **Output requirements:**
 - Dish-by-dish table: dish name, category, house description (target length), POS/delivery line (short), digital version (long)
@@ -203,3 +205,79 @@ You are a menu copywriter with experience writing for James Beard–level kitche
 - For the **Bolognese** Star: Dynamic Menu Pricing Advisor confirms the $32 price band; copy reflects the band.
 - For the **Mole Negro** Puzzle: copy strength is the lift lever — pair with a Social Media Post Generator caption set on the launch week.
 - For the **LTO Lemonade**: hand the launch caption to the Social Media Post Generator; carry the same "fresh-squeezed lemon, muddled basil" hook into the social copy for consistency.
+
+---
+
+### Example 4 — Multilingual EN/ES + EN/PT, World Cup 2026 host-city Brazilian-fan target (Miami sports-bar, premium-casual)
+
+**Input:**
+- Operator: Miami premium-casual sports bar in Wynwood; World Cup 2026 watch-party operator-decision window (kickoff 2026-06-11, ~24 days from today's 2026-05-18 draft); Brazilian-fan target audience during the Brazil group-stage matches
+- Dishes: (a) Picanha plate (Star, $34, AAA-grade Brazilian-cut picanha, chimichurri, farofa, vinagrete, black beans), (b) Pão de Queijo basket (Plowhorse, $9, four cheese-bread rolls baked to order, lightly salted), (c) Caipirinha (signature cocktail, $14, Leblon cachaça, fresh lime, raw cane sugar)
+- Format: tri-fold World Cup 2026 menu insert (print + digital + DoorDash with Spanish-language toggle), each item EN + ES + PT, target 18–28 words per language per item
+- Brand voice: warm-premium-casual; Lucas (PT-fluent server) on the floor during Brazil-match seatings; signer not on the menu line itself
+- Compliance: Florida service-charge transparency law effective 2026-07-01 (auto-grat disclosure already on parties of 6+, in all three languages on the insert)
+
+**Menu-engineering notes:**
+- Picanha — Star at $34: confident, provenance-led, no over-translation; the Brazilian-fan guest knows the dish by name
+- Pão de Queijo — Plowhorse: short, value-signaling, lightly emotional (these sell to nostalgia at the bar during pre-kickoff)
+- Caipirinha — signature cocktail: lead with the cachaça brand (Leblon, Brazilian, recognizable), keep the rest tight
+
+**Picanha plate — EN house style (print, 26 words):**
+
+> *Picanha* — AAA-grade Brazilian top sirloin cap grilled over open flame, sliced to order. Chimichurri, *farofa*, *vinagrete*, black beans. The dish that Brazil eats on match day.
+
+**Picanha plate — ES (print, 25 words):**
+
+> *Picanha* — corazón de cuadril brasileño AAA a la brasa, fileteado a la orden. Chimichurri, *farofa*, *vinagrete*, frijoles negros. Lo que come Brasil en día de partido.
+
+**Picanha plate — PT (print, 24 words):**
+
+> *Picanha* — picanha brasileira AAA grelhada na chama aberta, fatiada na hora. Chimichurri, *farofa*, *vinagrete*, feijão preto. O que o Brasil come em dia de jogo.
+
+> *(Contains: none. GF.)* / *(Contiene: ninguno. SG / sin gluten.)* / *(Contém: nenhum. SG / sem glúten.)*
+
+**Pão de Queijo basket — EN house style (print, 20 words):**
+
+> *Pão de queijo* — four cheese-bread rolls baked to order, lightly salted. The smell at the bar before kickoff is on purpose.
+
+**Pão de Queijo — ES (print, 21 words):**
+
+> *Pão de queijo* — cuatro panecillos de queso horneados al momento, ligeramente salados. El aroma en la barra antes del partido es a propósito.
+
+**Pão de Queijo — PT (print, 20 words):**
+
+> *Pão de queijo* — quatro pãezinhos assados na hora, levemente salgados. O cheiro no balcão antes do jogo é proposital.
+
+> *(Contains: dairy, egg.)* / *(Contiene: lácteos, huevo.)* / *(Contém: laticínios, ovo.)*
+
+**Caipirinha — EN house style (print, 18 words):**
+
+> Caipirinha — Leblon cachaça, fresh lime muddled with raw cane sugar, on the rocks. The national drink of Brazil.
+
+**Caipirinha — ES (print, 19 words):**
+
+> Caipirinha — cachaza Leblon, lima fresca macerada con azúcar de caña, en las rocas. La bebida nacional de Brasil.
+
+**Caipirinha — PT (print, 17 words):**
+
+> Caipirinha — cachaça Leblon, limão fresco macerado com açúcar mascavo, no gelo. A bebida nacional do Brasil.
+
+> *(Contains: alcohol.)* / *(Contiene: alcohol.)* / *(Contém: álcool.)*
+
+**Delivery-platform lines (DoorDash + Uber Eats, Spanish toggle on, 96–110 chars per language):**
+
+> EN — Picanha Plate — AAA Brazilian top sirloin cap, chimichurri, farofa, vinagrete, black beans. GF.
+> ES — Plato de Picanha — corazón de cuadril brasileño AAA, chimichurri, farofa, vinagrete, frijoles negros. SG.
+> PT — Picanha — picanha brasileira AAA, chimichurri, farofa, vinagrete, feijão preto. SG.
+
+**Compliance flags (multilingual audit):**
+- "AAA-grade Brazilian" — verified on the Marfrig invoice; the AAA grade language carries identically into ES and PT (no translation drift on the meat-grade claim, which is a high-risk claim under FTC product-grading guidance and the Brazilian SIF / ANVISA equivalent)
+- "*Pão de queijo* baked to order" — verified with Chef Souza (each basket fired on guest order; pre-baked rolls explicitly disallowed)
+- "Leblon cachaça" — verified on the spirits invoice; brand name preserved verbatim in all three languages (no genericization to "cachaça")
+- "National drink of Brazil" — soft cultural claim; carries in EN/ES/PT but does not appear in DoorDash short line (truncation risk)
+- Service-charge transparency (Florida 2026-07-01 effective): the 18% auto-grat on parties of 6+ disclosure prints on every menu insert in all three languages above the cocktail section; Lucas (PT-fluent server) reads the PT script at check drop on Brazilian-guest tables
+- No machine-translation — all three language passes drafted by a native speaker (PT) and a near-native bilingual server (ES) and signed off by GM before print
+
+**Tradeoff note:** the Brazilian-fan target audience knows the dish names — heavy translation ("Brazilian top sirloin cap" in English carries the dish for non-Brazilian guests but the PT line keeps "picanha brasileira" un-glossed because the PT-reader needs no gloss). The EN line carries the gloss; the PT line trusts the guest. This is the right asymmetry.
+
+**Cross-references:** for the auto-grat disclosure PT/ES script and the World Cup 2026 host-city operator window, see World Cup 2026 Surge Playbook Steps 3 and 6. For the multilingual review-response thread that follows a successful Brazil-match watch-party seating, see Review Response Drafter Example 5. For the multilingual pre-shift huddle script on the night of the match, see Shift Prep Checklist Example 3. For multilingual staff-discipline correspondence in the same operator's BOH (e.g., a kitchen miss on a high-volume Brazil-match night), see _shared/email-drafter Step 11.

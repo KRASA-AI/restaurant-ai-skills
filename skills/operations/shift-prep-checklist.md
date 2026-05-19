@@ -4,8 +4,8 @@ category: operations
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~15 min/shift"
-version: 1.2
-last_eval_score: 8.50
+version: 1.3
+last_eval_score: 8.90
 ---
 
 # 📋 Shift Prep Checklist
@@ -236,3 +236,86 @@ You are a kitchen operations specialist who ensures smooth service flow and inve
 > "Friday, 220 covers, Brazil kicks at 8. Three things to nail. One: wings — Thursday went short, do not let that happen tonight. Pre-call when we hit 15 lb. Two: Lucas on the floor for Tables 4, 7, 11, 12 — Brazilian guests, full PT service. The auto-grat script reads at check drop in PT — every table, no surprises. Three: bundles — 35 Pitcher & Pizza, 28 Wing Drop. The script is on the back of the order pad. TVs are zoned: marquee on Brasil TV Globo feed, side bar neutral, patio sound on TV-5. Doors are open. Let's go."
 
 **Cross-references:** for the multilingual scripts and the PT auto-grat language, see World Cup 2026 Surge Playbook Steps 3 and 6. For the bundle copy, see Menu Description Writer. For the wing-supply backup-distributor list, see Supplier Negotiation Brief.
+
+---
+
+### Example 4 — Monday AM, multi-unit consolidated pre-shift across 3 fast-casual units (post-NRA Show 2026 GM debrief)
+
+**Input:**
+- Shift: Monday AM, 5:45 AM open – 11:30 AM, May 18 (Day 2 of NRA Show 2026, Chicago, May 16–19; the area GM is on the show floor through Tuesday)
+- Operator: 3-unit fast-casual ramen concept (Loop, West Loop, Lincoln Park); single area-GM running consolidated pre-shift via 7shifts huddle thread
+- Reservations: walk-in + Toast TakeOut; trailing 4-week Monday AM avg per unit: Loop 142, West Loop 98, Lincoln Park 76
+- Specials: tonkotsu broth refresh (Mondays), miso-corn LTO ($14, est. 22 attach per unit, Day 3 of 7)
+- Par status: all 3 units flagged broth at par; West Loop short chashu pork (4 lb on hand vs. 7 lb target, vendor Day 2 short)
+- Equipment: Loop unit reach-in #2 reading 39°F (target 38°F) — flagged Sunday close
+- 86 list: West Loop only — soft-boiled egg topping (cracked-shell rate elevated on Sunday batch; pulled from line until 9:30 AM re-prep)
+- Previous shift: Sunday close noted Loop unit ran the LTO short by 11:15 AM; West Loop chashu supplier (Restaurant Depot Day-2) delivered short; Lincoln Park clean close
+- Area-GM note: NRA Show 2026 floor visit Monday afternoon (Crunchtime AI booth + R365 AI booth #6027 + Toast vendor mtg); shift leads run all 3 units autonomously through lunch; Area-GM on Slack but not on-property
+
+**Shift overview — consolidated across 3 units:**
+
+> **Monday AM — May 18 — 316 covers projected across 3 units (Loop 142 + West Loop 98 + Lincoln Park 76) — Area-GM at NRA Show 2026**
+>
+> Peak window: **11:30 AM – 12:45 PM** Loop lunch rush (downtown weekday); **12:00 PM – 1:00 PM** West Loop + Lincoln Park overlap rush. Staffing: each unit shift-lead runs autonomously; Area-GM on Slack #ops-monday for escalation only.
+>
+> **Top-3 priorities for shift leads (consolidated):**
+> 1. **West Loop chashu short** — 4 lb on hand, need 7 lb for Monday lunch. Backup distributor (Sysco) confirmed 9:30 AM same-day drop; if it slips, **86 the chashu ramen at 11:15 AM** rather than partial-portion (sub-quality plates drag the lunch-rush ticket time). Decision authority delegated to West Loop shift lead Marisol.
+> 2. **Loop reach-in #2** — re-temp at 6:15 AM with a calibrated probe; if >40°F, move proteins to walk-in immediately, schedule HVAC tech via the 7shifts maintenance form. Decision authority delegated to Loop shift lead Carlos.
+> 3. **West Loop soft-boiled egg 86** — pulled from line until 9:30 AM re-prep batch; menu insert printed, FOH briefed at huddle. Decision authority delegated to West Loop shift lead Marisol.
+
+**Consolidated station prep (selected — 3-unit roll-up):**
+
+| Unit | Station | Lead | Prep items + qty | Equipment check | Cross-unit note |
+|---|---|---|---|---|---|
+| Loop | Hot line | Carlos | Tonkotsu broth refresh (60 qt held 195°F); ramen noodles ×220 portions; miso-corn LTO ×24 | Reach-in #2 re-temp at 6:15 AM (CRITICAL) | If Loop reach-in trips, redistribute LTO prep to walk-in; do not delay open |
+| West Loop | Hot line | Marisol | Tonkotsu broth refresh (45 qt); ramen noodles ×140 portions; chashu pork (4 lb on hand, Sysco drop 9:30) | All green | If Sysco slips, 86 chashu ramen at 11:15 AM (see Top-3 #1) |
+| West Loop | Cold / topping | Devon | Soft-boiled egg re-prep batch at 8:00 AM (target 9:30 AM line-ready); pickled bamboo, scallion, nori at par | All green | Egg 86 until 9:30 AM — menu insert printed, FOH briefed |
+| Lincoln Park | Hot line | Priya | Tonkotsu broth refresh (35 qt); ramen noodles ×110 portions; miso-corn LTO ×14 | All green | Clean unit — no cross-unit dependency |
+
+**Specials inventory (consolidated):**
+
+| Special | Loop | West Loop | Lincoln Park | 86 trigger |
+|---|---|---|---|---|
+| Miso-corn LTO ($14) | 24 plates | 16 plates | 14 plates | When unit-specific plate count sold |
+| Chashu ramen | par | **at risk** (4 lb on hand) | par | West Loop: 86 at 11:15 AM if Sysco slip |
+| Soft-boiled egg topping | par | **86 until 9:30 AM** | par | West Loop: re-prep batch line-ready 9:30 |
+
+**86 list (per unit, read at each huddle):**
+
+| Unit | Item | Reason | Stop-selling time | Return time |
+|---|---|---|---|---|
+| West Loop | Soft-boiled egg | Sunday batch cracked-shell rate | Already 86 | 9:30 AM today |
+| West Loop | Chashu ramen | Supplier shortage (Sysco drop pending) | 11:15 AM if no drop | Tuesday delivery |
+
+**Cross-unit shift handoff (Slack #ops-monday, posted at 5:50 AM by area-GM from Chicago):**
+
+> "Morning. I'm on the NRA Show floor by 8 — Crunchtime AI booth first, then R365 AI #6027 around 11, Toast vendor mtg at 2. Carlos / Marisol / Priya, you run lunch. Three flags: Loop reach-in #2 re-temp at 6:15 — Carlos, post the read in this thread. West Loop chashu — 4 lb on hand, Sysco drop 9:30, Marisol you call the 86 at 11:15 if it slips. West Loop egg — 86 till 9:30, re-prep batch from Devon. Anything urgent ping me direct, otherwise post unit close-of-rush numbers in this thread by 2 PM. Have a good one."
+
+**Equipment status (consolidated):**
+
+| Unit | Item | Status | Plan |
+|---|---|---|---|
+| Loop | Reach-in #2 | ⚠ 39°F (target 38°F) | Re-temp 6:15 AM by Carlos; HVAC ticket if >40°F |
+| West Loop | All systems | ✓ Green | — |
+| Lincoln Park | All systems | ✓ Green | — |
+
+**FIFO rotation (per unit, area-GM only flags exceptions):**
+
+| Unit | Item | Stock age | Action |
+|---|---|---|---|
+| West Loop | Sunday cracked-egg batch (compromised) | 1 day | **Do not use on the line** — repurpose to staff family meal only |
+| Loop | LTO miso-corn (Day 3 of 7) | 1 day | Use FIRST before today's fresh batch |
+
+**Area-GM dashboard checks (Crunchtime / R365 alerts, while on the show floor):**
+
+> Monitor on phone between booth visits — set 7shifts push alerts for: (a) Loop reach-in #2 re-temp result, (b) West Loop Sysco drop confirmation, (c) any unit ticket-time creep >9 min during the 11:30–12:45 peak. If any of the three alerts fire, decision-loop with the shift lead in DM within 5 minutes; do not interrupt vendor meetings unless it's a safety call.
+
+**Pre-shift huddle scripts (3 unit-local, posted in the 7shifts huddle thread by 5:55 AM):**
+
+> **Loop:** "Monday, 142 covers projected, lunch rush at 11:30. Reach-in #2 is at 39 — I re-temp at 6:15 and post in the Slack thread. Tonkotsu refresh is on, LTO miso-corn at 24 plates. Eyes up, doors at 7."
+>
+> **West Loop:** "Monday, 98 covers projected. Two flags. Egg 86 till 9:30 — Devon's re-prep is line-ready then, menu insert is at the host stand, FOH knows. Chashu — 4 lb on hand, Sysco drops at 9:30; if it slips, I call the 86 at 11:15. Tonkotsu refresh is on, LTO at 16 plates. Doors at 7."
+>
+> **Lincoln Park:** "Monday, 76 covers projected. Clean unit. Tonkotsu refresh on, LTO at 14 plates. Doors at 7."
+
+**Cross-references:** for area-GM consolidated decision authority during off-property windows (vendor floor visits, conferences, off-site meetings), see Embedded Multi-Unit AI Ops Copilot Brief (when promoted from watch-list). For the Crunchtime AI Forecasting accuracy claim and the R365 AI Black Rock Coffee Bar case study at NRA Show 2026, see Multi-Unit Restaurant Finance AI / xFP&A Selection Brief. For the World Cup 2026 multilingual shift-lead conventions (relevant 3 weeks from kickoff 2026-06-11), see World Cup 2026 Surge Playbook.

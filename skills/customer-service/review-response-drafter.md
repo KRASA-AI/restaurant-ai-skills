@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~8 min/review"
-version: 1.2
-last_eval_score: 8.60
+version: 1.3
+last_eval_score: 9.00
 ---
 
 # ⭐ Review Response Drafter
@@ -65,6 +65,8 @@ You are a hospitality reputation specialist who writes public review responses t
 11. **Signature and sign-off** — Close with a named person ("— Maria Chen, General Manager"), a warmth cue from the brand voice library, and only the title/first name that the guest would recognize on a return visit. Avoid corporate-sounding titles unless they match the brand.
 
 12. **Pre-publish review** — Check for: any admission of fault on safety-sensitive claims, mention of competitors, defensiveness, passive-aggressive phrasing, template-feeling language, dish names spelled wrong, missing signature, anything the owner would be embarrassed to read out loud at a staff meeting.
+
+13. **Multilingual review handling** — When the original review is in Spanish, Portuguese, French, Mandarin, Korean, Vietnamese, or any non-English language, **detect the language and reply in kind**. Rules: (a) draft directly in the target language — never machine-translate the response, especially for severity-tier negatives where word-choice carries legal weight; (b) preserve the same platform-specific word-count target (Google 150–300, Yelp 100–200, etc.) in the target language; (c) preserve dish names exactly as they appear on the menu (do not translate "picanha" → "Brazilian top sirloin"; do not translate "tagliatelle" → "ribbon noodles" — preserve the menu-canonical spelling); (d) preserve the GM signer's name and title verbatim; (e) preserve the severity gate identically — an allergy-reaction review in Spanish still triggers a holding response with owner/counsel/insurance sign-off before the substantive reply; (f) for code-switched reviews (mixed EN + ES, EN + PT, EN + Mandarin), reply in the dominant language of the review; for true 50/50 splits, mirror the review's structure (open in the language of the opening sentence, close in the language of the closing sentence); (g) for World Cup 2026 host-city operators during the June 11 – July 19 window, expect a 3–6× spike in ES and PT Google / Yelp reviews — pre-stage the GM bilingual reply convention (single signer, dual-language pinned response template) at least 14 days before kickoff; (h) flag any review containing a legal-threat phrase ("voy a llamar a un abogado," "vou processar," "je vais porter plainte") to brand-protection counsel before any reply, regardless of language; (i) preserve the dish-name-spelled-wrong audit identically in the target language — a misspelled "Pão de Queijo" in a PT response is a worse signal than in an EN response because the PT-speaking reader will catch it.
 
 **Output requirements:**
 - Primary response draft (ready to paste), labeled with platform and character count
@@ -245,3 +247,64 @@ You are a hospitality reputation specialist who writes public review responses t
 | 4 — fake / competitor | Google | 1 | severe-claim-but-unverified | YES (offer to verify) | YES | YES (owner) |
 
 **Cross-handoffs:** Example 2 hands off to AI Phone Agent Playbook (route inbound call to GM mobile) and to Health Inspection Prep (allergen-handling SOP refresh). Example 3 hands off to Shift Prep Checklist (recurring delivery-temp complaint pattern). Example 4 hands off to brand-protection counsel and pest-control / health-inspection records.
+
+---
+
+### Example 5 — Google, 5-star bilingual EN/PT Brazil-match watch party, Miami operator (multilingual reply-in-kind)
+
+**Input:**
+- Platform: Google
+- Star rating: 5
+- Reviewer: Beatriz S. (Brazilian guest, Miami visitor)
+- Review text (mixed EN + PT, ~70% PT): "Veio para o jogo do Brasil ontem com a família, mesa de 8 reservada na zona da TV principal. O serviço do Lucas foi impecável — falou português a noite toda, leu o auto-grat em PT no check, ninguém ficou surpreso. A picanha estava perfeita, o pão de queijo saindo quentinho do forno toda hora. The caipirinhas were on another level. Voltaremos sábado para o jogo da Argentina. Obrigada, Maria e equipe!"
+- Visit context: Friday dinner, June 12, 2026 (Brazil group-stage opener kickoff 8 PM ET), 8-top reservation, marquee TV zone (TVs 1–3), server Lucas (PT-fluent), GM Maria López on the floor; auto-grat read in PT at check drop per protocol
+- Reviewer history: first-time reviewer for this operator; profile shows 47 Google reviews across Brazil, Portugal, US (verified real guest)
+- Issue category: positive — exceptional bilingual service, food, watch-party experience
+- Severity tier: glowing positive
+- Resolution posture: thank by name in PT (the dominant review language), echo Lucas + Maria + the auto-grat-read-in-PT detail (this is the signature anti-surprise compliance moment), invite back for the Argentina match Saturday
+- Brand voice: warm-premium-casual; signer Maria López, GM (single signer, dual-language template pre-staged for the World Cup window)
+
+**Triage tag:** severity=glowing-positive | move-to-private=no | platform-flag=no | language=PT-dominant (code-switched 30% EN)
+
+**Severity gate:** pass — no safety, allergy-incident, legal, or low-star pattern triggers. Standard positive-response craft in PT-dominant code-switched form.
+
+**Language-detection note:** review opens in PT and closes in PT; English appears mid-review on the caipirinha line. Per Step 13 (f), reply in the dominant language (PT) and mirror the code-switch only on the natural English noun ("caipirinhas") if it lands. Lucas's name, Maria's name, and "auto-grat" preserve verbatim.
+
+**Primary reply (Google, 138 words, PT-dominant, signed by GM):**
+
+> Beatriz — obrigada por compartilhar a noite com a gente. O Lucas vai ficar honrado de ler isto; o objetivo da escala da noite foi exatamente esse — atendimento em português do começo ao fim, e o auto-grat lido em PT no check para que não houvesse surpresa nenhuma. Isso é parte do nosso protocolo para a Copa 2026, e o Lucas é a razão pela qual ele funciona. O Chef Souza fica feliz com a *picanha* — AAA Marfrig, na brasa, fatiada na hora — e o *pão de queijo* sai do forno a cada 12 minutos no balcão durante os jogos, foi assim a noite toda. The caipirinhas thank you back — Leblon é a cachaça da casa para a Copa. Reservaremos a zona de TV principal de novo para o jogo de sábado. Até lá.
+>
+> — Maria López, General Manager
+
+**Alternate (shorter, 92 words, PT-only):**
+
+> Beatriz — obrigada pela noite. O Lucas vai ficar honrado; o atendimento em português e o auto-grat lido em PT no check fazem parte do nosso protocolo para a Copa 2026, e o Lucas é a razão pela qual funciona. *Picanha* AAA Marfrig na brasa, *pão de queijo* saindo do forno a cada 12 minutos, e a caipirinha de Leblon — a casa toda agradece. Reservaremos a zona de TV principal de novo para o jogo de sábado. Até lá.
+>
+> — Maria López, General Manager
+
+**Multilingual handling notes:**
+- Dish-name preservation: *picanha* and *pão de queijo* italicized once, no translation — the PT-reading guest needs no gloss
+- Proper-noun preservation: Lucas, Maria López, Marfrig, Leblon all verbatim
+- Auto-grat compliance recap: explicit in the reply — "lido em PT no check" — this is a marketing moment for the operator's compliance posture (anti-surprise, Florida 2026-07-01 service-charge transparency law)
+- Code-switch mirror: the single EN line ("The caipirinhas thank you back") mirrors the guest's own code-switch on the same noun; permitted, light, doesn't shift the dominant language
+- Signer convention: Maria López — single signer, same name in EN and PT (no transliteration); the dual-language pinned-response template was pre-staged 14 days before Brazil's opener per the World Cup window protocol
+
+**Internal GM note:**
+- Flag Lucas in the next manager meeting for recognition; the PT-fluent floor coverage on Brazil-match nights is the operator's differentiation lever and Lucas is the staffing call that makes it work
+- Add Beatriz to the CRM with the "Brazil-match watch party" tag; pre-confirm Saturday's reservation in the marquee zone with the host stand by Friday close
+- The compliance-recap-as-marketing move ("auto-grat lido em PT no check") is replicating well — pull the 30-day Google reviews on the watch-party reservations and audit for the same compliance-recap pattern; if it carries into 4-star reviews too, the protocol is the right standing rule
+- Confirm that next week's BR–ARG-window reservations are staffed: Lucas + 1 backup PT-fluent server (Pedro from West Loop unit, if cross-unit pull is needed)
+
+**Cross-references:** for the auto-grat PT script at check drop and the marquee-zone seating protocol on Brazil-match nights, see World Cup 2026 Surge Playbook Steps 3 and 6. For the multilingual EN/PT menu insert that anchored the guest's *picanha* and *pão de queijo* read at the table, see Menu Description Writer Example 4. For the pre-shift huddle script that put Lucas on the floor for Tables 4, 7, 11, 12, see Shift Prep Checklist Example 3. For the multilingual review-response convention (this skill's Step 13) that mirrors the multilingual conventions in _shared/review-responder (v1.3) and _shared/email-drafter (v1.3), the consolidation helper `_shared/multilingual-translation-pipeline.md` is the recommended next-cycle build.
+
+---
+
+### Severity-gate tags (summary across all five examples)
+
+| Example | Platform | Stars | Severity tier | Language | Move-to-private | Platform-flag | Hold-for-counsel |
+|---|---|---|---|---|---|---|---|
+| 1 — anniversary | Google | 5 | glowing positive | EN | no | no | no |
+| 2 — allergy reaction | Yelp | 1 | SEVERE | EN | YES (immediate) | no | YES |
+| 3 — delivery accuracy | DoorDash | 2 | moderate | EN | YES (credit) | no | no |
+| 4 — fake / competitor | Google | 1 | severe-claim-but-unverified | EN | YES (offer to verify) | YES | YES (owner) |
+| 5 — Brazil-match bilingual | Google | 5 | glowing positive | PT-dominant (EN code-switch) | no | no | no |
