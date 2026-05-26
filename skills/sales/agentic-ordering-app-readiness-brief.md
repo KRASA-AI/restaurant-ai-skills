@@ -4,8 +4,8 @@ category: sales
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~4-6 hr/brand/quarter"
-version: 1.0
-last_eval_score: null
+version: 1.1
+last_eval_score: 9.00
 ---
 
 # 🛒 Agentic Ordering App Readiness Brief
@@ -89,4 +89,219 @@ You are a digital-channel strategist who has launched ordering experiences acros
 
 ## Example Output
 
-> [This section will be populated by the eval system with a reference example. For now, run the skill with sample input to see output quality.]
+### Example 1 — 50-unit fast-casual evaluating ChatGPT app (handoff-to-app) vs. Bites aggregator end-to-end checkout
+
+**Input (CEO-level brief request, 5-day deadline):**
+- Brand: Cinco Coastal, 50-unit fast-casual coastal-California concept (CA + AZ + NV + TX); all corporate-owned, no franchise
+- Current digital stack: native iOS + Android app (Olo-built), Olo Rails into UE / DD / Grubhub, Toast POS, Punchh loyalty (2.4M members, 38% digital-order loyalty attach), Stripe payments, Deliverect for marketplace menu sync
+- Assistant surfaces under consideration: ChatGPT app (Apple-distribution global ChatGPT 5.5 release expected mid-2026) + Bites aggregator listing on ChatGPT — board wants a recommendation by Friday
+- Loyalty posture: Hard requirement — Punchh attach is the CEO's growth flywheel; CMO can accept attach degradation up to a floor of 28% (vs. 38% baseline) during a 12-week test if the channel revenue replaces it
+- Checkout-stance options: (a) handoff-to-app pattern (Starbucks-style), (b) Bites end-to-end inside ChatGPT, (c) parallel pilot
+- Vibe / persona target list (sample): "a light dinner for two under $35 with one pescatarian," "a coastal-grain bowl that's not too spicy for my picky 7-year-old," "a healthy lunch I can pick up in 12 minutes," "an order I can split between two pickup points for a work team of 12," "happy hour drinks pickup at the closest store, $50 budget, group of 6"
+- Menu: 47 SKUs across 4 categories; modifier taxonomy 6-deep average; dietary/allergen tags complete; daypart rules live (HH 15:00–18:00 weekdays); 2 states have variant items (TX kolache add-on; AZ no-alcohol in 3 dry-county units)
+- Competitive coverage: Starbucks ChatGPT app (handoff-to-app, no in-assistant checkout, launched 2026-04 with public claim of 4% lift on AOV from group orders); Little Caesars ChatGPT app (handoff-to-app, "Vibe Ordering" press claims 7% repeat-rate lift); Sweetgreen (no in-assistant surface yet); Chipotle (no in-assistant surface yet); Cava (announced exploring, no ship)
+- Risk tolerance: CEO + CDO sign launch; data-sharing constraint — no per-guest history may be shared with the assistant vendor; brand wants public framing as "guest-convenience, not labor-displacement"
+- Measurement commitments: 4-week and 12-week reports to the board; weekly internal flash; CDO owns
+
+**Output — 1-page CEO summary (top of the brief):**
+
+> **Recommendation:** Ship the **ChatGPT app handoff-to-Cinco-Coastal-app pattern (Option a) as the first 90-day stance.** Defer the Bites end-to-end aggregator checkout (Option b) to a Phase 2 evaluation after the 12-week handoff results clear the loyalty-attach floor. Run no parallel pilot — split testing across two checkout patterns in the first 90 days dilutes signal on both surfaces and confuses guests reading press coverage.
+>
+> **Loyalty stance:** Punchh attach is the deal-breaker. Handoff-to-app gives us full identity continuity. Bites end-to-end will degrade attach by ~12–18 points based on Little Caesars' public commentary and Bites-class aggregator commission economics — below our 28% floor in 3 of the 4 internal projection scenarios.
+>
+> **Commission-displacement position:** We are NOT ready to allow Bites-class aggregator fulfillment in Phase 1. UE + DD + Grubhub remain the only third-party fulfillment channels through 2026-Q3. We will revisit when Bites publishes a measured-ROI deployment case with a Punchh-class loyalty integration disclosed.
+>
+> **4-week KPI targets (CDO-owned):** In-assistant channel revenue ≥ $480K (~$2.4M annualized run-rate at 50 units, ~1% of total digital); AOV within 5% of native-app AOV; loyalty attach ≥ 32% (vs. 38% baseline; floor 28%); basket abandonment at handoff ≤ 22% (this is the new metric; no baseline).
+>
+> **12-week KPI targets:** In-assistant channel revenue ≥ $1.6M (cumulative); AOV within 3% of native-app; loyalty attach ≥ 34%; basket abandonment ≤ 18%; cannibalization of native-app from same-guest cohort ≤ 14% (acceptable swap zone — beyond this we are buying our own customers via OpenAI's surface, which is not the strategy).
+>
+> **Top 3 risks:** (1) Apple distribution flake — if ChatGPT 5.5 global rollout slips past 2026-Q3, our launch window slips with it; mitigation: stage launch around an OpenAI press window, not a fixed date. (2) Cannibalization of native-app from same-guest cohort — if same-guest swap rate exceeds 14%, we are paying OpenAI rev-share + Apple cut on revenue we already owned; mitigation: weekly cannibalization read at the cohort level. (3) Embarrassing-recommendation risk — the assistant may surface item combos our brand voice wouldn't (e.g., "kale bowl with extra ranch and bacon"); mitigation: termination-for-reputation contract clause with a 24-hour delisting SLA.
+
+**Section 1 — Checkout-stance decision matrix:**
+
+| Lever | Handoff-to-app (Starbucks pattern) | End-to-end via Bites | Parallel pilot |
+|---|---|---|---|
+| Loyalty attach (projected at wk 12) | 34–38% (within 0–4 pts of baseline) | 22–28% (degraded, near floor) | Confounded — neither surface gets clean signal |
+| Gross margin after commission | Native-app economics (no marketplace cut) | 6–9 pts below native-app (Bites 12–15% commission + Stripe) | Mixed |
+| Data ownership | Full — Cinco Coastal owns the order, identity, loyalty | Partial — Bites holds the order; we receive a feed | Confounded |
+| Brand voice at purchase moment | Cinco Coastal app + native checkout UX | Bites checkout UX (vendor-skinned) | Mixed |
+| Speed to market | ~10 weeks (OpenAI app submission + handoff plumbing) | ~6 weeks (Bites onboarding) | ~12 weeks (both pipelines + measurement design) |
+| Franchise-operator acceptability | n/a (Cinco Coastal is 100% corporate) | n/a | n/a |
+| **Weighted score** | **Recommended** | Defer to Phase 2 | Not recommended |
+
+Trigger conditions to revisit Bites end-to-end in Phase 2:
+- Bites publishes a measured-ROI deployment case with a Punchh-class loyalty integration disclosed, OR
+- A peer brand of similar size publishes 12-week data showing loyalty attach holds within 5 pts of native-app baseline on Bites end-to-end, OR
+- OpenAI / Anthropic / Google publishes a loyalty-passthrough API that solves the attach degradation at the protocol level
+
+**Section 2 — Vibe-to-menu mapping (top 5 of the 20 target prompts, full mapping in appendix):**
+
+| Sample guest prompt | Agent extraction | Canonical menu pick | Runner-up | Upsell attach |
+|---|---|---|---|---|
+| "Light dinner for two under $35 with one pescatarian" | group=2, budget=$35, dietary=pescatarian (1 of 2), daypart=dinner, pickup default | 1× Salmon-Avocado Grain Bowl ($14), 1× Spicy Chicken Tinga Bowl ($13), 1× Cilantro-Lime side ($4) → $31 + tax | 1× Salmon-Avocado, 1× Vegan Coastal Bowl ($13) | Add chips + salsa $4 / Add agua fresca pair $7 → cap at $35 |
+| "Coastal-grain bowl that's not too spicy for my picky 7-year-old" | group=1 (kid), spice=mild-only, dietary=age-appropriate | 1× Kid's Coastal-Grain Bowl ($8) with mild salsa selected, no jalapeño | 1× Build-Your-Own with mild only | Add fruit cup $3 / Add kid agua fresca $3 |
+| "Healthy lunch I can pick up in 12 minutes" | group=1, daypart=lunch, prep-time-priority, healthy filter | 1× Coastal Greens Bowl ($12) — flagged "<10 min" in canonical feed | 1× Tinga Bowl light | Add agua fresca $3 / Loyalty enroll prompt |
+| "Order I can split between two pickup points for a work team of 12" | group=12, multi-pickup, business-account hint | Split-order flow: 6 at nearest store, 6 at second store; cart-builder picks 4× sharing platters + 8× individual bowls | Split 8/4 with mixed protein | Add corporate-bill prompt + chips/salsa platters $8 each → 4 of them |
+| "Happy hour drinks pickup at closest store, $50 budget, group of 6" | group=6, daypart=HH (15–18 wkdays — confirm time), budget=$50 | 6× HH margaritas at $7 each = $42 + 2× chips + salsa $8 = $50 (or split to 4 cocktail / 2 NA) — TX + CA + NV units only; AZ 3-unit dry-county HARD HANDOFF to a "this store is non-alcohol" reply | 4× margs + 2× agua fresca for split groups | "Add a guacamole + chips $7 to round it out?" |
+
+Flagged hard-handoff prompts (must NOT proceed to checkout without human review):
+- Any anaphylactic allergen mention ("my daughter is anaphylactic to peanuts" → human-allergen-confirmation flow, store callback within 4 min)
+- Any minor-purchasing-alcohol signal ("16-year-old at home, can I add a margarita")
+- Any catering > 25 covers (routes to the catering team email)
+- Any gift-card or balance-inquiry prompt (routes to the loyalty support team)
+
+Agent persona reinforcement: "Interpret guest phrasing; never invent menu items that are not in the canonical source." Drift-detection on this rule is part of the weekly QA review (Section 8).
+
+**Section 3 — Menu structure for agentic construction (gap audit + fixes):**
+
+| Failure mode | Where it would trip Cinco Coastal | Data-layer fix | Owner |
+|---|---|---|---|
+| Phantom modifier ("add extra jalapeño") | Jalapeño is not a modifier on the Coastal Greens Bowl | Reconcile modifier ontology with Digital Menu Optimization Brief output; explicit modifier whitelist per SKU | Marcus Reyes (digital ops) |
+| Dietary contradiction ("vegan" + "ahi tuna") | Vegan bowl SKU exists but ahi is a protein swap on it — flag as conflict | Add dietary-conflict constraint to the modifier engine | Marcus Reyes |
+| Price drift ($14.50 in-app vs. $14.99 in-assistant) | Apple/OpenAI surface may cache; canonical feed update latency is 4 hours | Add pre-checkout reconciliation gate; show in-assistant disclaimer until parity confirmed | Engineering + Stripe team |
+| Group-size scaling beyond max-cart | "Order for 80" with no cart guard → POS swamp | Cap max-cart at 30 SKUs in-assistant; route catering > 25 covers to catering team | Marcus Reyes |
+| AZ dry-county alcohol surfacing | Margarita SKU surfaces in 3 AZ units that don't sell alcohol | Add store-level availability gate at the SKU level; agent must check store-availability before offering | Engineering |
+| LTO timing drift | Summer LTO surfaces after 2026-09-01 end-date | LTO window honored in canonical feed; agent must respect daypart + LTO window flags | Marcus Reyes |
+
+**Section 4 — Loyalty and account-linking path (handoff-to-app pattern):**
+
+```
+Guest in ChatGPT → "Order me a Salmon-Avocado bowl + agua fresca for pickup"
+  ↓
+Agent confirms: store, time, modifiers, allergens, price
+  ↓
+Agent: "I'll send this to your Cinco Coastal app to finish — open the app to confirm and pay."
+  ↓
+Deep link → Cinco Coastal app (iOS Universal Link or Android App Link)
+  ↓
+App opens with cart pre-loaded + Punchh OAuth silent refresh (if last-30-day login) OR OTP fallback via SMS/email
+  ↓
+Guest taps "Confirm + Pay" → Stripe → Punchh earn-event fires automatically
+  ↓
+Order routed to Toast POS → store confirms
+  ↓
+Agent in ChatGPT receives push: "Order confirmed at Cinco Coastal — Marina del Rey. Ready at 7:42 PM."
+```
+
+Loyalty-preservation patterns evaluated:
+- **handoff-to-app (Starbucks-style):** Recommended. Punchh attach holds at native-app baseline.
+- **in-assistant link-on-first-order (deferred account creation):** Phase 2 candidate. Attach will degrade unless OpenAI surfaces a passthrough OAuth.
+- **pre-linked (guest already signed in via OpenAI ↔ Cinco Coastal integration):** Phase 3 — requires OpenAI to expose a brand-identity passthrough that does not exist as of 2026-Q2.
+
+**Section 5 — Pricing parity and disclosure (90-day commitment):**
+
+- Price parity: in-assistant SKU price = first-party app SKU price, ±$0.00, for 90 days
+- Disclosure line (shown above the basket in ChatGPT, italicized):
+  > *Prices match the Cinco Coastal app. Pickup is free; delivery (if available at your store) adds a standard fee shown in the app before you pay.*
+- Source-of-truth price feed: Cinco Coastal canonical menu feed (Toast → Olo → Deliverect → assistant vendor); 4-hour update SLA
+- Drift alert: > $0.05 difference between canonical and assistant price for any SKU → CDO + engineering on-call ping; sync within 30 min; reconciliation report at week-end
+- Pricing-logic protection: pricing methodology (HH windows, daypart pricing, regional variance) is contractually protected; assistant vendor sees the *output* prices, not the rules
+
+**Section 6 — Commission-displacement and third-party-delivery governance:**
+
+- Phase 1 stance: Cinco Coastal does NOT allow Bites-class aggregator fulfillment in ChatGPT. UE + DD + Grubhub remain the only third-party fulfillment channels.
+- Phase 2 trigger: Bites publishes a measured-ROI case with a Punchh-class loyalty integration disclosed.
+- Double-listing prevention: Cinco Coastal claims its own ChatGPT app listing; brand registry filed with OpenAI on launch day. If a guest searches "Cinco Coastal" in ChatGPT, the app result is the brand's own; aggregator listings (when allowed) sit below as fulfillment options, not as the brand surface.
+- Franchise opt-in/opt-out: n/a (Cinco Coastal is 100% corporate-owned). For peer brands that are franchised: this section is the highest-friction governance work and benefits from a separate franchisee-operator FAQ.
+
+**Section 7 — Edge-case and fallback copy (12 most-likely scenarios, paste-ready):**
+
+```
+1. Item out of stock:
+   "The Salmon-Avocado bowl is 86'd at Marina del Rey tonight — the Tinga
+   bowl is the closest match. Swap it, or pick a different store?"
+
+2. Store closed:
+   "Marina del Rey is closed right now; the next opening is tomorrow at
+   11:00 AM. I can schedule pickup then, or check a nearby store — want
+   to try El Segundo (open until 9:30 PM)?"
+
+3. Delivery zone mismatch:
+   "Your address is outside Cinco Coastal's delivery range. Pickup is
+   available at Marina del Rey (12 min away) or El Segundo (18 min) —
+   want to switch to pickup?"
+
+4. Allergen conflict (peanut warning):
+   "You mentioned a peanut allergy, and our Spicy Chicken Tinga is
+   prepared in a kitchen that also handles peanuts. I'll recommend the
+   Coastal Greens Bowl instead — please also confirm with the store team
+   when you arrive."
+
+5. Allergen conflict (anaphylactic — HARD HANDOFF):
+   "I see you mentioned an anaphylactic allergy. For your safety, please
+   call Marina del Rey directly at (310) 555-0188 before placing this
+   order — they'll review prep details with you."
+
+6. Budget exceeded:
+   "Your cart is $4 over your $35 cap — I can remove the agua fresca
+   ($3.50) and we'd be at $31.50. Or want to raise the cap?"
+
+7. Modifier unavailable:
+   "Avocado is sold out at Marina del Rey tonight — would you like the
+   bowl without, or with a free pickled-onion sub?"
+
+8. Age-restricted item (alcohol):
+   "Margaritas need an over-21 ID check at pickup. I'll add it to the
+   order — please bring a valid ID."
+
+9. AZ dry-county variance:
+   "The Tempe store (your nearest) doesn't serve alcohol. I can swap the
+   margaritas for our Cucumber-Mint agua fresca, or switch to the
+   Scottsdale location (12 min away) which does serve."
+
+10. Catering (> 25 covers — HANDOFF):
+    "An order for 40 is best handled by our catering team — they can do
+    delivery, family-style trays, and a 24-hour lead time. Want me to
+    open the catering page?"
+
+11. Payment declined:
+    "Your card was declined. Want to try another card in the Cinco Coastal
+    app, or use Apple Pay?"
+
+12. Session timeout / "I don't know how to help":
+    "I'm not sure I can help with that one — but the Cinco Coastal team
+    can. The Marina del Rey number is (310) 555-0188, open until 9:30 PM."
+```
+
+All fallbacks preserve the brand voice (warm, direct, no fake urgency). No "exclusive deal — order now" copy; no countdown timers; no manufactured scarcity.
+
+**Section 8 — Measurement plan (4-metric loop, weekly cadence, CDO-owned):**
+
+| Metric | Target wk 4 | Target wk 12 | Read frequency | Owner |
+|---|---|---|---|---|
+| In-assistant channel revenue | ≥ $480K | ≥ $1.6M cumulative | Weekly | CDO |
+| AOV vs. native-app | Within 5% | Within 3% | Weekly | CMO |
+| Loyalty attach on in-assistant orders | ≥ 32% (floor 28%) | ≥ 34% | Weekly | CMO + Punchh team |
+| Basket abandonment at handoff | ≤ 22% (new metric) | ≤ 18% | Weekly | CDO + Engineering |
+| Same-guest cannibalization vs. native-app | n/a wk 4 | ≤ 14% by wk 12 | Bi-weekly | CMO + Analytics |
+| Cannibalization of third-party-delivery (UE + DD + Grubhub) | n/a wk 4 | ≤ 8% by wk 12 | Bi-weekly | CMO + Analytics |
+
+4-week-in go / hold / roll-back gate:
+- **Go (continue + expand):** All four core metrics within target.
+- **Hold (continue + diagnose):** One metric below target by ≤ 5 pts; pause new feature ship; root-cause analysis.
+- **Roll-back (delist):** Loyalty attach below 28% (the hard floor) OR same-guest cannibalization > 18% OR basket abandonment > 30%.
+
+Reporting cadence: weekly flash to CDO; bi-weekly to CEO + CMO; monthly board update; full 12-week recap with go/hold/scale recommendation.
+
+**Section 9 — Launch-day comms pack (5 artifacts):**
+
+- **Public statement (1 paragraph):** "Cinco Coastal guests can now place orders inside ChatGPT — describe a craving, budget, or group, and we'll suggest the closest match from our menu. The order finishes in our Cinco Coastal app, where loyalty points earn just like any other digital order. We built this for guest-convenience and we'll keep refining what's helpful."
+- **Loyalty-member email + push (3 lines):** "Order Cinco Coastal in ChatGPT. Points earn the same. Open the app once to link — takes 8 seconds. [Link.]"
+- **Franchise-operator FAQ:** n/a (100% corporate)
+- **Crew briefing (2 lines, posted at every store + Toast huddle screen):** "Some guests may arrive with orders they placed in ChatGPT. The ticket prints the same way as any app order. Treat them as Cinco Coastal app orders — same warmth, same speed."
+- **Press-ready response for trade press:** "We're an early ChatGPT app partner because our guests have asked us to meet them where they're already planning meals. The launch is guest-convenience — our store teams keep doing what they do best."
+
+**Section 10 — Pre-signature contract checklist (legal + digital teams run this before any signature):**
+
+- Data-use rights: per-order data may not be used to train models or shared with other brands; brand reserves the right to audit
+- Brand-voice carveouts: vendor may not rewrite our item descriptions; vendor may not generate new item names; the canonical menu feed is the only source
+- Exclusivity: no exclusivity to OpenAI; Cinco Coastal reserves the right to ship Gemini, Claude, and Perplexity apps in parallel
+- Price-parity: 90-day mutual commitment to honor brand-set prices; no vendor-driven markup
+- Delisting cadence: 24-hour delisting SLA on brand request; 4-hour delisting SLA on a reputation-incident trigger
+- Incident-escalation SLA: 30-min response, 4-hour resolution target on a Sev-1 issue
+- Menu-sync latency SLA: 4-hour update from canonical feed to assistant surface
+- Termination-for-reputation clause: if the assistant platform ships a model update that produces materially-embarrassing or unsafe recommendations involving our brand, we may exit with 24-hour notice and recover any prepaid fees pro-rata
+
+---
+
+This brief is paste-ready for the CDO's board pack. Section 1 (decision matrix), Section 8 (measurement plan), and Section 10 (contract checklist) typically copy directly into the board slides; Sections 4–7 typically copy into the engineering + ops launch runbook.
