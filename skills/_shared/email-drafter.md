@@ -4,8 +4,8 @@ category: _shared
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~10 min/email"
-version: 1.3
-last_eval_score: 8.60
+version: 1.4
+last_eval_score: 9.20
 ---
 
 # ✉️ Email Drafter (Restaurant)
@@ -257,3 +257,162 @@ You are a restaurant GM's executive writer. You write like a hospitality operato
 > Tell me which works and I'll lock it. Either way, see you Saturday.
 >
 > — Maria, GM
+
+---
+
+### Example 5 — R365 AI ↔ Sysco onboarding-conflict escalation (multi-unit, moderate risk)
+
+**Input:**
+- Scenario: vendor escalation — multi-unit operator (Brasa & Bahia, 4-unit Atlanta Latin-Caribbean fast-casual; the same operator referenced in `operations/food-waste-reduction-planner.md` Example 4) flagging a category-mapping conflict on three high-velocity SKUs between the R365 AI item master and the Sysco product catalog, ten business days after the 2026-05-15 R365 AI ↔ Sysco connector went live
+- Recipient: Jordan Reyes, Sysco DSR, 3-year relationship (escalating the operator's CC list with R365 AI Solutions Architect Marc Cohen and Sysco ops manager Pat Singh)
+- Context: 4-unit consolidated R365 AI Dashboard now reads from the Sysco connector; three SKUs are mis-mapping in a way that breaks SKU-level prime-cost variance attribution and downstream the food-waste-planner waste-station integration: (1) whole milk #2 — Sysco shows `WMILK-2GAL-PFG-1234` but the R365 AI item master expects the gallon-level mapping; (2) chicken breast jumbo — Sysco mapping rolls up two pack-sizes (4/5 lb + 8/10 lb) under the same parent SKU which collapses the cost-per-portion calc; (3) San Marzano D.O.P. tomato cases — Sysco product catalog rolled "San Marzano-style" cases into the same parent as the true D.O.P. case, so the operator's premium-protected SKU now misclassifies on the variance dashboard
+- Desired outcome: joint clean-up session within 5 business days, named owners on both sides (Marc Cohen for R365 AI; Pat Singh for Sysco ops), written commitment that Sysco catalog-side mapping changes flow through to R365 AI consumer-side in the same 48-hour window the operator-side changes do, and a 2026-Q3 quarterly category-mapping audit schedule
+- Tone: polished, firm, partnership-protective (long-standing Sysco relationship; do not push this to a contract-pull conversation in writing — that is the September QBR conversation)
+- Constraints: CC Owner (Carla Bahia) + R365 AI SA (Marc Cohen) + Sysco ops manager (Pat Singh); do not name the operator's R365 AI license tier in the body (confidential); attach the three SKU-mapping screenshots; reference the 2026-05-28 R365 AI item-master sync that Marc Cohen ran on-site at Buckhead
+
+**Risk-tier tag:** moderate. GM/area-GM may send with the CC list. No owner / attorney sign-off needed; the operator's R365 AI license tier stays in the owner-only confidential addendum, not in the email body.
+
+**Subject:** R365 AI ↔ Sysco category-mapping clean-up — 3 SKUs, joint session this week (post 2026-05-15 connector)
+
+**Primary draft (188 words):**
+
+> Jordan, Pat, Marc —
+>
+> Quick coordination ask. Ten business days into the R365 AI ↔ Sysco connector live (2026-05-15) and our 4-unit dashboard is reading cleanly with one exception: three high-velocity SKUs are mis-mapping in a way that breaks the SKU-level prime-cost variance attribution we built the integration to deliver.
+>
+> The three SKUs:
+>
+> 1. **Whole milk #2** — Sysco SKU `WMILK-2GAL-PFG-1234` is rolling up under the gallon parent on the R365 AI side; we need the 2-gallon child mapping preserved so the per-portion cost calc holds on the coffee program at the Midtown unit.
+> 2. **Chicken breast jumbo** — Sysco's parent SKU collapses the 4/5 lb and 8/10 lb pack-sizes under the same child; this breaks the cost-per-portion roll-up on the picanha-substitute item at the East Atlanta unit (where we run the smaller pack).
+> 3. **San Marzano D.O.P. tomato cases** — the Sysco product catalog rolled the "San Marzano-style" case under the same parent as the true D.O.P. case. We need the D.O.P. case as a distinct child SKU; the variance dashboard currently misclassifies the premium-protected line.
+>
+> Two specific asks:
+>
+> (a) **Joint clean-up session this week** — 60 minutes, all four of us (Marc has the R365 AI side; Pat has the Sysco catalog side); Wednesday or Thursday afternoon works for me at Buckhead, or fully remote.
+>
+> (b) **Pipeline commitment in writing** — when Pat ships a Sysco catalog-side mapping change, the R365 AI consumer-side mapping flows through in the same 48-hour window the operator-side changes do. Marc's 2026-05-28 on-site sync at Buckhead handled the operator-side push but the Sysco catalog-to-R365 AI consumer-pull side is what is loose right now.
+>
+> I'd also like to anchor a 2026-Q3 quarterly category-mapping audit on the calendar (the R365 AI + Sysco product team + Brasa & Bahia inventory ops) — three weeks of lead time from now puts the first audit at the end of August. Plan on hearing back by Wednesday EOD; otherwise I'll follow up Thursday.
+>
+> Maria Restrepo
+> Area General Manager, Brasa & Bahia (4 units, Atlanta)
+> Direct: 678-555-0142 | maria@brasaandbahia.com
+
+**Alternate (firmer, 162 words):** Same structure with an explicit reference that this is the second category-mapping incident since the 2026-05-15 go-live (first one was caught on the R365 AI side during Marc Cohen's 2026-05-27 on-site at Buckhead) and a request that Pat loop in his Sysco data-integrations product manager. Use this version if the soft ask doesn't land within 48 hours. Do NOT name the Brasa & Bahia R365 AI license tier in the firmer version either.
+
+**CC list:**
+- Owner Carla Bahia — required per house policy on any vendor escalation that names the integration partner
+- R365 AI Solutions Architect Marc Cohen — joint clean-up requires him on the call; his 2026-05-28 on-site sync at Buckhead is the operator-side baseline
+- Sysco ops manager Pat Singh — Pat owns the catalog-side mapping fix per the 2024 carryover from the Q4 2025 QBR
+
+**Attachments:**
+- `sysco_r365ai_mapping_3sku_screenshots_2026-05-31.pdf` (3 screenshots, one per SKU, showing the parent-child mis-mapping on each side)
+- `brasa_bahia_4unit_sku_master_excerpt_2026-05-28.csv` (operator-side item master excerpt for the three SKUs)
+
+**Compliance flags applied:**
+- No naming of the operator's R365 AI license tier in the body
+- No threat to pull the Sysco contract (escalation language reserved for the September QBR)
+- The 4-unit consolidated dashboard data is not attached (confidential); only the 3-SKU excerpt
+- The 2026-Q3 quarterly audit ask is positioned as preventive, not punitive
+- Marc Cohen and Pat Singh are CC'd with explicit context, not blind-cc'd
+
+**Follow-up reminder:** "Jordan / Pat — circling back on the 3-SKU clean-up. Can we lock Wednesday or Thursday for the joint session?" (send Thursday AM if no reply by Wednesday EOD)
+
+---
+
+### Example 6 — World Cup 2026 host-city catering inquiry, trilingual reply (HIGH-VALUE catering inquiry, moderate risk)
+
+**Input:**
+- Scenario: catering inquiry — large-party Brazilian-team match-day catering ask via WhatsApp on 2026-06-04
+- Recipient: Beatriz Andrade (President, Brazilian-American Business Association of South Florida) writing on behalf of a 35-person business association watch-party for the Brazil group-stage match (equivalent 2026-06-19 evening)
+- Restaurant: Tres Banderas, Miami/Wynwood premium-casual sports bar (same operator referenced in `sales/digital-menu-optimization-brief.md` Example 2) — 8 minutes from the Wynwood riverfront watch-party district, 6-week multilingual EN + ES + PT digital surge already live per the Step 13 convention
+- Context: inquiry arrived in Portuguese ("Olá, gostaria de saber se podem nos receber para um almoço executivo de 35 pessoas no dia 19/06 às 14h, antes do jogo do Brasil..."); the operator's WhatsApp Business number is the multilingual intake channel; Beatriz's network of guests is largely PT-dominant with some ES + EN code-switchers; the BABA has booked Tres Banderas for three prior business lunches and is a 2-year relationship; the operator's caipirinha alcohol-policy hard-block (TX-equivalent stance adopted as multi-state floor — see `admin/dynamic-menu-pricing-advisor.md` Example 2) means caipirinha service via table-side cart only, no bottle-service
+- Desired outcome: trilingual reply (PT primary, ES alternate, EN summary) that locks the 14:00 reservation, recommends on-site service over catering-pickup for the 25+ cover-count, clarifies the alcohol-policy stance up-front to avoid an awkward day-of conversation, attaches the catering menu PDFs in all three languages and the BEO draft, and discloses the Florida 2026-07-01 service-charge transparency convention (20% auto-grat) in all three languages
+- Tone: warm, multilingual, hospitality-first; no machine translation; honor the operator's prior history with BABA
+- Constraints: WhatsApp message-length convention (PT primary, then ES, then EN — keep each language readable as a single message rather than scrolled); attach the BEO and the catering menu in PT + ES + EN as PDFs; CC the Owner + Bar Manager Sam (who will brief the alcohol-policy on the 6/19 service team) + Lucas (PT-fluent server who will run point on the table) on the internal-confirmation email that follows the WhatsApp; no admission that the operator turned anyone else away for the slot
+
+**Risk-tier tag:** moderate. Maria López (GM) may send the WhatsApp reply with the CC list on the internal-confirmation email; Owner Patrícia M. is CC'd per house policy on any catering inquiry > $2,500.
+
+**WhatsApp reply (PT primary, 145 words):**
+
+> Beatriz, que bom ter notícias suas! Sim, podemos receber a BABA para um almoço executivo no dia 19/06 às 14h — é antes do jogo do Brasil e o nosso espaço se encaixa perfeitamente para um grupo de 35.
+>
+> Para um grupo desse tamanho recomendamos serviço presencial (no salão privativo Mezzanine — Tres Banderas tem 38 lugares no Mezzanine, com TV para o jogo após o almoço), em vez de pedido para retirada. O Lucas — que você já conhece — vai cuidar do atendimento.
+>
+> Sobre a caipirinha: ela é feita à la carte com carrinho à mesa, dois oz por copo (Leblon premium); não trabalhamos com serviço de garrafa. As caipirinhas custam $13 cada e podem ser pedidas durante o almoço.
+>
+> Vou enviar o cardápio de catering em PT + ES + EN e o pré-BEO por e-mail em uma hora.
+>
+> Aviso de transparência: gorjeta automática de 20% se aplica para grupos de 6+ (padrão da casa adotado em todas as nossas unidades).
+>
+> Confirma o 19/06 às 14h para 35 e eu travo o Mezzanine.
+
+**WhatsApp alternate (ES, 132 words) — sent as a follow-up message in the same thread for code-switching guests:**
+
+> Beatriz, encantada de saber de ti. Sí, podemos recibir a la BABA para un almuerzo ejecutivo el 19/06 a las 14:00 — antes del partido de Brasil y nuestro espacio funciona perfectamente para 35 personas.
+>
+> Para un grupo de este tamaño recomendamos servicio en sala (en el Mezzanine privado de Tres Banderas, 38 cubiertos, con TV para el partido después del almuerzo) en lugar de catering para retirar. Lucas — a quien ya conoces — estará en la mesa.
+>
+> Sobre la caipirinha: la servimos a la carta con carrito de mesa, dos onzas por copa (Leblon premium); no trabajamos con servicio de botella. Las caipirinhas cuestan $13 cada una y se pueden pedir durante el almuerzo.
+>
+> Envío el menú de catering en PT + ES + EN y el pre-BEO por correo en una hora.
+>
+> Aviso de transparencia: propina automática del 20% aplica para grupos de 6+ (estándar de la casa adoptado en todas nuestras unidades).
+>
+> ¿Confirmas 19/06 a las 14:00 para 35 y bloqueo el Mezzanine?
+
+**WhatsApp short EN summary (98 words) — sent as third message for the EN-dominant guests on the thread:**
+
+> Beatriz — confirming for the EN folks on the thread: yes to a 35-person executive lunch Friday 6/19 at 2:00 PM, before the Brazil group-stage match. We recommend on-site service in our 38-seat private Mezzanine (TVs for the match after lunch) over catering pickup at this party size. Lucas will be your server. Caipirinhas are à-la-carte tableside via the cart at $13 / drink — no bottle service. 20% auto-grat on parties of 6+ per house policy. Sending the catering menu (PT/ES/EN) and the pre-BEO by email in an hour. Confirm and I'll lock the Mezzanine.
+
+**Compliance flags applied:**
+- No machine translation; PT primary version drafted by Lucas (PT-fluent server) review-pass against the operator's Step 13 multilingual convention; ES version reviewed by Andrea (ES-fluent floor staff at the Wynwood unit)
+- Proper-noun preservation: "caipirinha," "Leblon," "Tres Banderas," "Mezzanine," "BABA" all kept untranslated across all three languages
+- Word-count parity: PT 145 / ES 132 / EN 98 — within the ±15% target-language convention for a WhatsApp-length intake
+- Alcohol-policy hard-block stated proactively in all three languages (cart-only, 2 oz, $13, no bottle-service) — Sam (bar manager) on the 6/19 service team gets the same script pre-shift
+- Florida 2026-07-01 service-charge transparency disclosure (20% auto-grat on 6+) called out in all three languages — adopted as house standard ahead of the FL effective date for cross-unit brand consistency
+- No mention that the operator turned anyone else away for the slot; no exclusivity language; no compensation offer for the booking
+
+**Internal-confirmation email (sent immediately after the WhatsApp lock, EN-only for ops handoff, ~210 words):**
+
+> Subject: BABA Mezzanine lock 6/19 14:00 — 35-cover Brazilian match-day lunch (multilingual service)
+>
+> Team —
+>
+> Locking the Mezzanine for the BABA 6/19 14:00 — 35 covers, 2-year relationship, Beatriz Andrade as primary contact. Service runs through approximately 16:00 (the match kickoff is 17:00 local).
+>
+> **Coverage:**
+> - Lucas runs point at the table (PT-fluent; Beatriz's prior 3 bookings)
+> - Andrea on floor backup (ES-fluent for the code-switch guests)
+> - Sam at the bar (caipirinha cart service, 2 oz Leblon pours, allocation-conscious; if we run low, switch to Avuá — see Maria's 5/28 confirmation with Pat the distributor)
+> - Pastry handles the after-lunch coffee + brigadeiro service for the match watch-party window
+>
+> **Policy disclosures already in the WhatsApp thread (sent 6/4):**
+> - Caipirinha policy: cart-only, 2 oz, $13, no bottle-service
+> - 20% auto-grat on parties 6+ per house standard
+>
+> **Attachments going out by email in the next hour:**
+> - `tres_banderas_catering_menu_pt_2026-06.pdf`
+> - `tres_banderas_catering_menu_es_2026-06.pdf`
+> - `tres_banderas_catering_menu_en_2026-06.pdf`
+> - `beo_baba_2026-06-19_v1_draft.pdf`
+> - `alcohol_service_policy_one_pager_pt_es_en.pdf`
+>
+> **Internal cross-skill handoff:**
+> - The 35-cover Brazil group-stage booking feeds the `operations/world-cup-2026-surge-playbook` Mezzanine surge protocol
+> - The trilingual menu compliance follows `sales/menu-description-writer.md` Step 13
+> - The Florida 2026-07-01 transparency convention adopted here matches the standard set in `admin/dynamic-menu-pricing-advisor.md` Example 2 and `sales/digital-menu-optimization-brief.md` Example 2
+>
+> Patrícia (Owner) is CC'd per house policy on the $2,500+ catering threshold.
+>
+> Maria López
+> GM, Tres Banderas
+
+**CC list on the internal-confirmation email:**
+- Owner Patrícia M. — required per house policy on catering inquiries > $2,500
+- Bar Manager Sam — alcohol-policy briefing for the 6/19 service team
+- Lucas (PT-fluent server) — running point on the table
+- Andrea (ES-fluent floor backup) — multilingual coverage
+- Pastry lead — after-lunch coffee + brigadeiro service for the match watch-party window
+
+**Follow-up reminder:** "Beatriz — confirming the menu PDFs and BEO landed in your inbox; let me know if there's anything to adjust before I send the calendar invite for the 19th." (send 2 hours after the WhatsApp lock if no reply)

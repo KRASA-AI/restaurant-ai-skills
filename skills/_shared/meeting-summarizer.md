@@ -4,8 +4,8 @@ category: _shared
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~15 min/meeting"
-version: 1.3
-last_eval_score: 8.60
+version: 1.4
+last_eval_score: 9.20
 ---
 
 # 📝 Meeting Summarizer (Restaurant)
@@ -334,3 +334,129 @@ We had a routine unannounced inspection today and scored an 88. Two things were 
 **What this means for you:** Same standards as every shift. Pre-shift station-check now includes a hand-wash station clear confirmation at the pantry. No change to service flow.
 
 **Questions: see Maria or Reyes.**
+
+---
+
+### Example 5 — NRA Show 2026 vendor-QBR debrief (multi-unit, consolidated cross-vendor stack)
+
+**Input:**
+- Meeting type: vendor QBR — post-trade-show consolidated debrief covering three vendor conversations
+- Date / day-part / location: 2026-05-20, 09:00–11:00 AM, Brasa & Bahia corporate office (Atlanta), day after NRA Show 2026 closed (2026-05-19)
+- Attendees: Maria Restrepo (Area-GM, 4-unit Brasa & Bahia), Owner Carla Bahia, Chef-Partner Renato Brasa, CFO consultant Tomas Vega; remote: Marc Cohen (R365 AI Solutions Architect — same SA who handled the Black Rock Coffee Bar Innovation Theater case on NRA Show closing day 2026-05-19), James Chen (Crunchtime AI Forecasting product manager), Aaliyah Stone (Leanpath solutions consultant); absent: none material
+- Raw material: 90-minute structured debrief notes Maria took on the show floor on 2026-05-17 and 2026-05-19 plus Maria's vendor-by-vendor recap call sheets
+- Key numbers referenced: 4-unit consolidated AUV $9.4M; R365 AI ↔ Sysco connector live since 2026-05-15 (5 days before this QBR); Marc Cohen on-site at Buckhead 2026-05-27 to 2026-05-28 for SKU-level item-master clean-up; World Cup 2026 kickoff 2026-06-11 (22 days from this QBR); the 2018 + 2022 World Cup cover data for the two ATL-area Brazilian-fan zip codes (Buckhead North + East Atlanta) are the overlay-validation reference set
+- Open items from last meeting (the 2026-04-22 monthly owner review): backup-fish-distributor onboarding (Maria + Renato — in progress, trial PO landed 2026-05-15); Memorial Day LTO P&L model (Renato — closed, Memorial Day weekend covers 2026-05-24 came in at +33% vs. forecast)
+- Audience: (a) internal owner-and-area-GM full version with R365 AI license tier in the confidential addendum; (b) chef-and-bar-team distribution version with vendor decisions only; (c) vendor-facing recap to Marc + James + Aaliyah with mutual asks only
+- Confidentiality flag: R365 AI license tier kept in the owner-only addendum; the specific Sysco DSR contract pricing kept off all distribution versions; Marc Cohen's named handling of the Black Rock Coffee Bar Innovation Theater case is internally referenceable but stays out of the vendor-facing recap
+
+**Recap — NRA Show 2026 Vendor-QBR Debrief, 2026-05-20 (owner + area-GM internal full version, ~520 words):**
+
+**Meeting title:** NRA Show 2026 consolidated vendor-stack QBR debrief
+**Purpose:** Lock the vendor-stack decisions Maria anchored across three booth conversations (R365 AI #6027, Crunchtime AI #4842, Leanpath #4842 same row) into a single 4-unit deployment plan ahead of the World Cup 2026 kickoff window (2026-06-11 to 2026-07-19), with named owners and a consolidated cross-vendor risk-log.
+
+**Decisions table:**
+
+| Decision | Rationale | Effective |
+|---|---|---|
+| Deploy R365 AI at all 4 Brasa & Bahia units by 2026-06-05 (Midtown, Buckhead, Decatur, East Atlanta) | Pre-World Cup readiness; Marc Cohen on-site at Buckhead 5/27–5/28 to lead the SKU-level item-master clean-up | 2026-06-05 |
+| Schedule quarterly category-mapping audit between R365 AI + Sysco + Brasa & Bahia inventory ops | The 2026-05-15 connector go-live exposed three SKU mapping conflicts (see email-drafter Example 5 escalation pattern); a quarterly cadence prevents drift | 2026-Q3 audit on 2026-08-29 |
+| 30-day Crunchtime AI Forecasting event-overlay model validation against 2018 + 2022 World Cup cover data for Buckhead North + East Atlanta zip codes | Per-unit match-day cover forecasting confidence-interval is the gating decision for the 4-unit consolidated surge staffing & ordering plan | Validation report due 2026-06-08 from James Chen |
+| Leanpath waste-station scale install at Buckhead on 2026-05-27 (paired with the R365 AI Marc Cohen on-site) | Connector-level SKU over-portion attribution is the food-waste-reduction-planner Example 4 close-the-loop requirement; doing both vendor on-sites the same week reduces 4-unit ops disruption | 2026-05-27 install; 4-unit roll-out by 2026-06-15 |
+| Consolidated 4-unit ACFB donation pickup route activated 2026-05-20 (already live) | Multi-unit surge waste-volume routing for the World Cup window | LIVE 2026-05-20 |
+| Twice-weekly CompostNow per unit starting 2026-06-01 | Per-unit compost capacity ahead of surge waste-volume | 2026-06-01 |
+| Cross-vendor single-point-of-failure contingency: all three vendors share a 2026-05-15 connector live-date — Brasa & Bahia retains a 14-day rollback to manual variance reporting if the consolidated dashboard goes down during the World Cup window | The Sinch May 2026 production-paradox study (74% rollback rate for live customer-comms AI agents) is the cautionary anchor — see new admin/ai-pilot-rollback-readiness-brief skill for governance framework | Contingency runbook owned by Maria + Marc Cohen by 2026-06-08 |
+
+**Vendor-by-vendor — R365 AI (booth #6027, Solutions Architect Marc Cohen, Black Rock Coffee Bar 190+ location case study referenced):**
+
+| KPI / item | Status | Δ vs. prior QBR |
+|---|---|---|
+| Connector live-date | 2026-05-15 ✓ | Originally scheduled 2026-04-30 (15 days slipped — Sysco-side catalog-mapping work) |
+| 4-unit deployment timeline | 2026-06-05 target ✓ | New (this QBR) |
+| On-site engagement (Buckhead 5/27–5/28) | Confirmed ✓ | New |
+| Quarterly category-mapping audit | Anchored on the calendar at 2026-Q3 (2026-08-29) | New |
+| Black Rock Coffee Bar case-study learnings applied | Maria flagged 3 takeaways: (1) name a single corporate owner per SKU class; (2) front-load the item-master clean-up before the first surge window; (3) treat the Sysco catalog-side updates as a separate stream from the operator-side updates | New |
+
+**Asks (us → R365 AI):**
+- 4-unit Buckhead on-site coverage (Marc Cohen 5/27–5/28; confirmed)
+- Written commitment that Sysco catalog-side mapping changes flow through to R365 AI consumer-side in 48 hours (per the email-drafter Example 5 escalation pattern)
+- Quarterly category-mapping audit calendar slot
+
+**Asks (R365 AI → us):**
+- A 4-unit case-study lookback at 2026-09-30 (post World Cup window) suitable for R365 AI use in the 2026-Q4 marketing cycle — Owner Carla holding sign-off pending the surge results
+- Operator participation in the R365 AI 2026-Q4 customer advisory board (one quarterly call, 60 minutes) — Carla confirmed yes
+
+**Vendor-by-vendor — Crunchtime AI Forecasting (booth #4842, PM James Chen):**
+
+| KPI / item | Status | Δ vs. prior QBR |
+|---|---|---|
+| Event-overlay model validation | 30-day window through 2026-06-08 ✓ | New (this QBR) |
+| Reference data set | 2018 + 2022 World Cup cover data for Buckhead North + East Atlanta zip codes; James Chen confirmed availability via the Crunchtime data partnerships team | New |
+| Confidence-interval delivery | Written CI by 2026-06-08; gating decision for the consolidated surge staffing & ordering plan | New |
+| Per-unit match-day cover forecasting | Will run for 6 days pre-kickoff (2026-06-05 onward) with daily updates | New |
+
+**Asks (us → Crunchtime AI):**
+- 30-day overlay model validation against the 2018 + 2022 reference set
+- Daily per-unit forecasting through the World Cup window
+- A post-window accuracy review with R365 AI consultant Marc Cohen joined (cross-vendor accuracy reconciliation)
+
+**Asks (Crunchtime AI → us):**
+- Per-unit POS feed access during the 6-day pre-kickoff window (already in scope under the standard data-sharing terms)
+- A 2026-Q4 multi-unit Latin-Caribbean concept case-study contribution (Carla holding sign-off pending the surge results)
+
+**Vendor-by-vendor — Leanpath (booth #4842, solutions consultant Aaliyah Stone):**
+
+| KPI / item | Status | Δ vs. prior QBR |
+|---|---|---|
+| 2026-05-15 R365 AI connector (Leanpath ↔ R365 AI) | Live ✓ | New |
+| Buckhead scale install date | 2026-05-27 (paired with the R365 AI Marc Cohen on-site) ✓ | New |
+| 4-unit roll-out | By 2026-06-15 | New |
+| SKU-level over-portion attribution via the connector | The Buckhead pão de queijo 5/19 pre-test is the diagnostic case feeding the 6/8 Monday corrective re-spec — per food-waste-reduction-planner Example 4 | New |
+| Twice-weekly CompostNow per unit | 2026-06-01 start | New |
+
+**Asks (us → Leanpath):**
+- 4-unit scale install completion by 2026-06-15
+- The SKU-level over-portion attribution data flowing to the R365 AI consumer side same 48-hour window the operator-side changes do
+
+**Asks (Leanpath → us):**
+- Operator participation in the Leanpath 2026-Q4 multi-unit case-study (Carla holding sign-off pending the surge results)
+
+**Numbers table (consolidated cross-vendor dashboard state):**
+
+| Metric | Target | Pre-QBR actual | Δ | Note |
+|---|---|---|---|---|
+| 4-unit prime-cost variance (R365 AI Dashboard) | ± 1.0 pt | + 0.6 pt (5/15–5/19 window) | Within tolerance | + 1.5 pt is the World Cup window re-review trigger per dynamic-menu-pricing-advisor Example 2 |
+| Food cost % (4-unit blended) | 28.0% | 28.8% | + 0.8 pts | Picanha Marfrig AAA passthrough (+9.4%) is the May driver; addressed in the pricing review |
+| Per-unit match-day cover forecast confidence | ± 8% | N/A (Crunchtime validation pending) | N/A | Confidence-interval delivery 2026-06-08 |
+| Waste-station SKU attribution coverage | 100% by 6/15 | 0% (pre-install) | N/A | Buckhead 5/27 install kicks the clock |
+| ACFB donation pickup route | 3×/week consolidated | LIVE | ✓ | Started 2026-05-20 |
+| CompostNow per-unit | 2×/week | Pending 6/1 start | ✓ | All 4 units confirmed |
+
+**Risk-log (consolidated cross-vendor, single-point-of-failure flagged):**
+
+| Risk | Likelihood | Impact | Owner | Mitigation |
+|---|---|---|---|---|
+| Cross-vendor single-point-of-failure (all three vendors on the same 2026-05-15 connector live-date) | Low | High | Maria + Marc Cohen | 14-day rollback to manual variance reporting; contingency runbook by 2026-06-08; see new admin/ai-pilot-rollback-readiness-brief skill for governance framework |
+| R365 AI ↔ Sysco category-mapping drift during the surge window | Medium | Medium | Maria + Marc + Pat Singh (Sysco) | Joint clean-up session scheduled per email-drafter Example 5; quarterly audit anchored at 2026-Q3 (2026-08-29) |
+| Crunchtime AI Forecasting overlay model accuracy miss on the ATL Brazilian-fan zip codes | Medium | Medium | James Chen + Maria | 2026-06-08 written confidence-interval as the gating decision; per-unit ordering plan can revert to a manual 1.4× lift heuristic if CI > ± 12% |
+| Leanpath 4-unit roll-out slip past 6/15 | Low | Low | Aaliyah Stone + Maria | The SKU-level attribution is the food-waste-reduction-planner Example 4 close-the-loop requirement, not a surge-blocker; East Atlanta and Decatur can run the World Cup window on the manual waste-station log if needed |
+| Brazil exits group stage (Crunchtime overlay assumes Brazil knockouts) | Medium | Medium | James Chen | Per-unit forecasting model branches at 2026-07-03 group-stage close; mid-window re-staff per the world-cup-2026-surge-playbook |
+| Leblon cachaça allocation cap from the distributor through 2026-09-30 | High | Low | Sam (bar manager) | Switch to Avuá at the unit-level if a unit runs allocation-out; no menu price change per the dynamic-menu-pricing-advisor Example 2 alcohol-policy hard-block |
+
+**Open-items tracker (carry-forward):**
+
+| Item | Status | Owner |
+|---|---|---|
+| Backup-fish-distributor onboarding | In progress (trial PO landed 2026-05-15; quality + price reviewed 2026-05-22; trial extended through Memorial Day weekend 2026-05-25 successfully) — promote to primary on the Bahia line by 2026-06-15 | Renato + Maria |
+| Memorial Day LTO P&L model | Closed (Memorial Day weekend covers came in +33% vs. forecast; LTO contribution $ +$12,400 across 4 units; P&L model accurate within ± 4%) | Renato |
+| Allergen card reprint (carried from 2026-04-25) | Closed 2026-05-05 | Beatriz (Buckhead) |
+
+**Audience-tuned versions:**
+- **Chef-and-bar-team distribution version** (200 words, vendor decisions only — no license-tier or contract-pricing detail; covers the deployment timeline, the Buckhead scale install date, the consolidated ACFB pickup, the twice-weekly CompostNow, and the alcohol-policy reinforcement)
+- **Vendor-facing recap to Marc + James + Aaliyah** (180 words, mutual asks only — no cross-vendor risk-log, no single-point-of-failure language that could be misread as a contract-pull threat; emphasizes the 2026-Q4 case-study contribution conditionals)
+- **Owner-only confidential addendum** (90 words, R365 AI license tier + specific Sysco DSR contract pricing + the operator's read on Marc Cohen's 5/19 Black Rock Coffee Bar Innovation Theater case as a future Brasa & Bahia case-study comparable)
+
+**Pre-distribute review:**
+- Read each version aloud
+- Confirmed no license-tier or contract-pricing detail leaks to the team or vendor versions
+- Verified all named individuals (Marc Cohen, James Chen, Aaliyah Stone, Pat Singh, Sam, Lucas, Beatriz, Andrea, Diego) match the operator's name conventions across the food-waste-reduction-planner Example 4, dynamic-menu-pricing-advisor Example 2, and email-drafter Examples 5 + 6
+- The cross-vendor single-point-of-failure framing is internal-only; vendor-facing recap drops it
