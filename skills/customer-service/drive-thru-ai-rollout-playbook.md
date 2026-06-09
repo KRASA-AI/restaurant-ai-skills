@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~4 hrs/location/wave"
-version: 1.0
-last_eval_score: null
+version: 1.1
+last_eval_score: 8.80
 ---
 
 # 🚗 Drive-Thru AI Rollout Playbook
@@ -87,4 +87,51 @@ You are a QSR operations and conversational-AI rollout lead who has launched dri
 
 ## Example Output
 
-> [This section will be populated by the eval system with a reference example. For now, run the skill with sample input to see output quality.]
+Below is an abbreviated example. A full wave playbook runs five to eight pages and includes every numbered section above.
+
+# Drive-Thru AI Rollout Playbook — Wave 2 (First Franchise Cohort)
+
+**Brand:** Regional chicken QSR, 1 lane/store. **Wave:** "SE-Franchise-A" — 18 franchise lanes, GA/AL/TN cluster, go-live 2026-07-13 (after the World Cup window to avoid learning-tax during peak). **Platform:** ConverseNow (POS-native on PAR Brink, OCS installed). **Baseline:** SoS 214s, accuracy 91%, ~165 cars/day/lane.
+
+## VP Ops Summary (one page)
+
+18 franchise lanes go live the week of 7/13 after passing the eligibility gate (SoS baseline filed, signage refreshed, manager certified, liability ack signed). Week-1 SoS target ≤ 219s (baseline +5, the learning tax); week-4 target ≤ 205s. Capture ≥ 70% (complex chicken menu), accuracy ≥ 95%, upsell attach +4 pts. Go/hold/rollback gate at end of week 4. **Top 3 risks:** modifier blowup on build-your-own tenders, franchisee "will this replace my crew" pushback, single-supplier OCS hardware lead time.
+
+## 1. Menu-Complexity Bounding (excerpt)
+
+Flatten build-your-own tenders (count + 6 sauces + 3 sides = ~400 combos) to canonical IDs `tenders_{3,5,8}` + `sauce_*` + `side_*`. Agent-safe modifiers: sauce, side swap, drink size, combo upsize. **Deny-list (ask-for-human):** catering trays, gift cards, allergy-substitution, "make it like last time." Synonym map: "tender meal" → `combo_tenders_3`; "big sweet tea" → `drink_tea_lg`. Pricing-parity check: voice total must equal kiosk total to the cent.
+
+## 2. Lane & SoS Targets
+
+Single lane, AI owns the order post, human owns the window handoff. SoS targets: menu board ≤ 35s · order post ≤ 95s · total ≤ 205s by week 4. OCS displays the order before pull-forward — the primary accuracy-lift mechanism.
+
+## 4. Impulse Upsell (daypart, margin-anchored)
+
+> Lunch: "Want to make that a combo with a sweet tea and fries?"
+> Hot day / afternoon: "A half-gallon sweet tea for the road?"
+> Dinner: "Add a family side — mac & cheese feeds the table."
+One offer per car, never repeated. Retire any prompt under target attach after 14 days.
+
+## 5. OCS Copy
+
+> Listening: "Got it — anything else?"  Finished: "Please check your screen, then pull forward."  Error: "Press the button for a team member."
+
+## 8. Human-Assist Triggers
+
+3 classification failures · "manager" · "allergy" + severity · "refund"/"complaint"/"missing"/"wrong" · language switch · ticket stuck > 90s.
+> Bridge: "One moment — let me get a team member on for you."
+
+## 7. Franchisee FAQ (FBC script, excerpt)
+
+> "Will this replace my employees?" — "No. It takes the order so your crew can focus on speed and a friendly window. No positions are eliminated by this rollout."
+> "Who pays if the AI gets an order wrong?" — "Same as today: we remake it. The OCS lets the guest catch errors before the order fires, so accuracy goes up, not down."
+> "How do I turn it off during a rush?" — "One tap on the manager tablet drops to human-only; it re-enables automatically next shift or when you toggle back."
+
+## 10. Week-4 Go / Hold / Rollback Gate
+
+GO if SoS ≤ 205s **and** accuracy ≥ 95% **and** capture ≥ 70%. HOLD (extend 2 weeks) if one metric misses by < 5%. ROLLBACK if accuracy < 90% or capture < 55%: disable AI, preserve recordings for vendor review, notify franchisee, log with brand ops.
+
+## 11. Disclosure & Compliance
+
+> "Your order may be taken by our AI assistant and recorded for quality."
+No card data captured at the post — payment at the window only. Biometric-rule check: no cameras/voice-ID in this wave, so no IL/TX BIPA-class exposure; re-review if Window Intelligence is added.

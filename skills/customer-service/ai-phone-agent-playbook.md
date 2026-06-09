@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~3 hrs/deployment"
-version: 1.0
-last_eval_score: null
+version: 1.1
+last_eval_score: 8.90
 ---
 
 # ☎️ AI Phone Agent Playbook
@@ -75,4 +75,48 @@ You are a restaurant customer-experience designer and conversational AI architec
 
 ## Example Output
 
-> [This section will be populated by the eval system with a reference example. For now, run the skill with sample input to see output quality.]
+Below is an abbreviated example. A full playbook runs four to seven pages and includes every numbered section above.
+
+# AI Phone Agent Playbook — Trattoria Liguria
+
+**Concept:** Single-unit neighborhood Italian, full-service, 78 seats + 14-seat bar, dinner-only Tue–Sun. POS: Toast. Reservations: Resy. Phone-agent platform: Loman. Brand voice: warm, classic, neighborhood-host. **Prepared for:** Owner / GM.
+
+## GM Summary (one page)
+
+The agent answers every call 24/7, takes takeout orders into Toast, books/modifies/cancels Resy reservations, answers the 20 most common questions, and runs one margin-aware upsell per call. It transfers to a human on any allergy-severity, complaint, large-party (9+), press, or VIP-tag trigger. Week-1 tuning priorities: (1) order-readback accuracy on modifier-heavy pasta orders, (2) the after-hours reservation-capture greeting, (3) the dessert-attach prompt on 4+ reservations. Card data is never spoken, repeated, or logged — payment is a Toast SMS pay-link only.
+
+## 1. Greetings (paste into Loman → Greetings)
+
+> **Peak (Fri–Sat 6–9pm):** "Thanks for calling Trattoria Liguria — are you calling to place an order, make a reservation, or ask a question?"
+> **Off-peak:** "Good evening, you've reached Trattoria Liguria. I can take an order, book a table, or answer anything about the menu — what can I do for you?"
+> **After-hours (closed):** "Thanks for calling Trattoria Liguria — we're closed right now, but I can book you a table for our next open evening or answer a quick question. Which would you like?"
+
+## 2. Intent Router
+
+Top-level intents classified on first utterance: `new_order`, `modify_order`, `reservation_new`, `reservation_modify`, `reservation_cancel`, `hours_location`, `menu_question`, `allergy_question`, `large_party` (9+), `complaint`, `gift_card`, `human_request`. Disambiguation: "a table tonight" → `reservation_new`; "pick something up" → `new_order`; "party of 12" → `large_party` (auto-escalate).
+
+## 3. Takeout Flow (excerpt)
+
+> Agent: "Great — is this for pickup? … And your name and a callback number? … What would you like?"
+> [per item] "And how would you like the [item] — any changes?" → reads back full order → **single upsell** (see §5) → "Your order will be ready in about 25 minutes. I'll text you a secure link to pay — you're all set."
+
+## 5. Upsell Scripts (margin-anchored — Chianti/Vermentino & tiramisu are top contribution-margin per Dynamic Menu Pricing Advisor)
+
+> After entrée: "Would you like a glass of our Vermentino with that? It's lovely with the branzino." (one retry max)
+> On 4+ reservations: "Would you like me to set aside a tiramisu or two for the table?"
+> LTO: "We're running a wild-mushroom risotto this week — want me to add one?"
+
+## 7. Escalation Triggers
+
+Force human transfer on: "manager"; "allergy" + ("severe" / "anaphylaxis" / "nut"); "lawyer"; "sick" / "food poisoning"; 3 failed classifications; any Resy VIP tag; party ≥ 9; any mention of press/media.
+> Bridge line: "Of course — let me get one of our team on the line for you right now, one moment."
+
+## 9. Week-1 KPI Targets
+
+Call-capture ≥ 85% · order accuracy ≥ 95% · reservation-completion ≥ 90% · upsell attach ≥ 12% · human-handoff ≤ 15%. A/B test the dessert-attach prompt first.
+
+## 10. PCI & Compliance
+
+Agent never speaks, repeats, or logs card number, CVV, or expiration. Payment = Toast SMS pay-link only:
+> "I'll text a secure link to the number you gave me — you can pay right from your phone."
+> Recorded-call disclosure (CA two-party): "Just so you know, this call may be recorded for quality."

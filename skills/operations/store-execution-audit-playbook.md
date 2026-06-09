@@ -4,8 +4,8 @@ category: operations
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~6-10 hr/district/week"
-version: 1.0
-last_eval_score: null
+version: 1.1
+last_eval_score: 8.80
 ---
 
 # 📸 Store Execution Audit Playbook
@@ -93,4 +93,47 @@ You are a multi-unit Director of Operations who has scaled brand-standards progr
 
 ## Example Output
 
-> [This section will be populated by the eval system with a reference example. For now, run the skill with sample input to see output quality.]
+Below is an abbreviated example. A full rollout plan runs six to ten pages and includes every numbered section above.
+
+# Store Execution Audit Playbook — Brasa & Bahia (4-unit, scaling to 8)
+
+**Operator:** Brasa & Bahia — Latin-Caribbean fast-casual, 4 Atlanta units (Buckhead, Decatur, Midtown, Marietta), operator-owned, scaling to 8 by EOY. Stack: Crunchtime Ops Execution + Photo Intelligence (AI Actions live). Above-store: 1 area-GM (Maria Restrepo) → owner. **Prepared for:** Owner / Area-GM.
+
+## COO/Area-GM Summary (one page)
+
+Target photo-compliance 92% by month 3 / 96% by month 6. MTTR < 24h for fails. 30-day gate: pause expansion if AI false-positive rate > 15%. Franchise posture: N/A (operator-owned) — but the anchor book and prompts are built franchise-ready for the 8-unit scale. **Top 3 risks:** false positives on dim patio photos, photo-fatigue across the 4 small crews, anchor-book gaps on the new picanha-station build.
+
+## 1. Photo Cadence Matrix (excerpt)
+
+| Surface | Cadence | Why |
+|---|---|---|
+| Restroom | Hourly (Buckhead 2x/hr) | 3 guest complaints last quarter at Buckhead |
+| Line/expo (picanha station) | Every open + mid-shift | Signature-item build fidelity |
+| Patio + exterior trash (guest POV) | Daily open + weekly deep | Seasonal off-brand drift |
+| 86 board | Every shift change | Recurring "available but 86'd" errors |
+
+No-photo zones: prep-station crew lockers, office. Legal-review owner: Area-GM.
+
+## 3. Per-Photo AI Review Prompt (paste into Crunchtime AI config)
+
+> "You are a brand-standards auditor for Brasa & Bahia reviewing a photo from [station] during [daypart]. Compare against these anchor exemplars: [picanha plating pass exemplar + 2 fail exemplars]. Return: verdict (pass/near-miss/fail); specific deviations; severity 1–5; recommended follow-up task. Reject before judging if blurry, wrong station, wrong daypart, or missing the required frame element. Score fixtures, food, and uniform items only — never an employee's appearance."
+
+## 4. In-the-Moment Nudge Copy (paste into mobile string table)
+
+> "Retake — too blurry to verify the plating."
+> "We need the guest's-eye view of the trash area, not the back wall — retake."
+> "The World Cup LTO card isn't in the window — fix before submitting."
+> "Recurring grease pattern behind the plancha — add it to tonight's deep-clean and flag your KM."
+
+## 5. Auto Follow-Up Task
+
+Fail → task card: title, role (shift lead/KM/GM), SLA (same shift / next open / 24h), verification (retake + manager sign-off), escalation (GM → Area-GM if past SLA). Throttle to avoid task-flood; collapse duplicate restroom photos within 1 hour into one task; auto-close on verified retake.
+
+## 6. Weekly Trend-Anomaly Scan (prompt, output capped at 1 page)
+
+> "You are a multi-unit ops analyst. Given 7 days of submissions across 4 stores, name the top anomalies: stores down >15 pts WoW; categories whose fail rate rose chain-wide; any issue in >30% of stores; near-miss patterns about to become fails. For each: stores implicated, suspected root cause (scheduling/inventory/training/turnover), single highest-leverage fix."
+Example finding: "Marietta line-station fails spike Sat 6–9pm → cross-ref Staff Schedule Optimizer: line is one short at that daypart."
+
+## 10. 90-Day Plan & Six-KPI Scorecard
+
+Wk1–2 anchor-book capture + prompt calibration · wk3–6 Buckhead pilot (track false-pos/neg) · wk7–10 remaining 3 units + training · wk11–12 all-unit go-live · wk13 first KPI scorecard. KPIs: compliance by category · MTTR · repeat-violation rate · district-rank shift · task-SLA adherence · anomaly-prediction accuracy. **30-day gate:** false-positive > 15% → pause and recalibrate anchor book before adding units.
