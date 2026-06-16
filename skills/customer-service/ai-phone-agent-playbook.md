@@ -4,7 +4,7 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~3 hrs/deployment"
-version: 1.1
+version: 1.2
 last_eval_score: 8.90
 ---
 
@@ -99,6 +99,23 @@ Top-level intents classified on first utterance: `new_order`, `modify_order`, `r
 
 > Agent: "Great — is this for pickup? … And your name and a callback number? … What would you like?"
 > [per item] "And how would you like the [item] — any changes?" → reads back full order → **single upsell** (see §5) → "Your order will be ready in about 25 minutes. I'll text you a secure link to pay — you're all set."
+
+## 4. Reservation Flow (excerpt — writes to Resy)
+
+> Agent: "Happy to book you in — how many in your party, and what evening were you thinking?"
+> [captures party size, date/time, occasion, seating pref, allergy flag, name + mobile]
+> **Slot full →** "7:00 is fully committed, but I have 6:30 or 8:15 on the same evening, or 7:00 tomorrow — would any of those work? I can also add you to the waitlist."
+> **Party ≥ 9 →** auto-escalate: "A party of nine is a lovely occasion — let me get a manager to set that up properly," with date/size pre-attached to the transfer.
+
+## 6. Edge-Case Library (excerpt — 2 of 20)
+
+> **Gluten-free assurance:** "Most of our pasta can be made with gluten-free penne, and the kitchen uses a separate pot. I'll flag it on the order so the chef sees it — does anyone in the party have a severe reaction?" (a "severe"/"anaphylaxis" reply triggers §7 human transfer)
+> **Corkage / BYO:** "We allow one bottle with a £20 corkage on wine — would you like me to note that on your reservation?"
+
+## 8. Tone & Voice Calibration (brand voice: warm, classic, neighborhood-host)
+
+Signature phrases woven into greeting + confirmations: "so glad you called", "we'll have it hot and ready", "see you soon, friend". **Words to avoid** (off-brand for a neighborhood trattoria): "guys", "no problem", "awesome". Reservation confirmation rewrite:
+> "You're all set — table for four, Saturday at 7:00, and I've noted the gluten-free guest for the kitchen. We'll see you soon, friend."
 
 ## 5. Upsell Scripts (margin-anchored — Chianti/Vermentino & tiramisu are top contribution-margin per Dynamic Menu Pricing Advisor)
 

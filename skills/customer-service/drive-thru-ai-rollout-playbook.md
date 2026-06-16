@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~4 hrs/location/wave"
-version: 1.1
-last_eval_score: 8.80
+version: 1.2
+last_eval_score: 8.90
 ---
 
 # 🚗 Drive-Thru AI Rollout Playbook
@@ -115,6 +115,14 @@ One offer per car, never repeated. Retire any prompt under target attach after 1
 ## 5. OCS Copy
 
 > Listening: "Got it — anything else?"  Finished: "Please check your screen, then pull forward."  Error: "Press the button for a team member."
+
+## 6. Pickup-Window Monitoring (Hi Auto Window Intelligence in scope)
+
+Captured: greeting, thank-you, order-change audio, tone. **Not captured:** no biometric/voice-ID, no PII. Friendliness score = greeting-present + thank-you-present + tone band, rolled to a 0–100 store weekly average; < 70 flags a coaching note (not an individual write-up). Order-change audio is traced to AI-error vs. human-error to route accuracy root-cause. Weekly cadence: FBC reviews the lane's friendliness trend + top-3 order-change causes with the GM. **Stated to crew explicitly:** the tool coaches the window and finds accuracy root cause — it does not police individuals.
+
+## 9. Crew-Assist Training (the 6 assist moments)
+
+Window + kitchen crew train on what the AI does/doesn't, plus the six moments a human must own: (1) allergy confirmation, (2) payment exception, (3) upsell declined 3×, (4) loud background dropout, (5) unfamiliar-accent dropout, (6) guest asks for a manager. Because the voice order is already done by the time the car reaches the window, the window playbook is "be the friendly face": confirm the name on the OCS, hand off hot, thank by name.
 
 ## 8. Human-Assist Triggers
 

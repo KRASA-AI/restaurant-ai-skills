@@ -4,8 +4,8 @@ category: sales
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~3-4 hr/location/quarter"
-version: 1.0
-last_eval_score: null
+version: 1.1
+last_eval_score: 9.10
 ---
 
 # 🔎 AI Search Visibility Playbook
@@ -94,6 +94,75 @@ Before delivering, verify:
 - Booking-flow audit names each friction point an AI agent would abandon on
 - Measurement plan names both AI-answer share and reservation attribution — not just traffic
 - No recommendation relies on keyword stuffing, cloaked content, or schema misuse (AI engines demote these faster than Google ever did)
+
+## Example Output
+
+Below is an abbreviated example. A full playbook runs five to nine pages and includes every numbered section above.
+
+# AI Search Visibility Playbook — Bramble & Vine (Shoreditch)
+
+**Concept:** Single-unit modern-British, full-service, 64 covers + 12-seat bar + 20-cover dog-friendly courtyard. Dinner Tue–Sun, weekend brunch. Wood-fired hearth, seasonal British menu, strong vegetarian/gluten-free coverage. **Reservation stack:** OpenTable (live) + walk-in bar. **Market/locale:** UK, London E1, English, GBP. **Objective:** lift share of AI-answer mentions for the local "dog-friendly / hearth-cooked / date-night" question set and capture reservations through Google AI Mode and OpenTable's agent. **Prepared for:** Marketing + web team.
+
+## 1. Executive Summary
+
+Baseline AI-answer share on the 14 target questions is weak: Bramble & Vine is named by Perplexity and ChatGPT on only 2 of 14 ("dog-friendly restaurant Shoreditch" and "wood-fired restaurant East London"), never as the top pick, and is absent from Google AI Mode booking results because the OpenTable feed is missing cuisine and dietary tags. Two competitors (The Hearth E1, Maple & Ash Shoreditch) own the date-night and tasting questions via Time Out and Eater London citations. This playbook closes the feed gaps, ships an HTML canonical menu (currently a PDF — invisible to crawlers), adds answer-ready FAQ + schema, and pitches three earned citations.
+
+## 2. Reservation-Feed Readiness Scorecard
+
+| Partner | Live | On Google AI Mode 2026 list | Feed gaps |
+|---|---|---|---|
+| OpenTable | Yes | Yes | Missing `servesCuisine`, `suitableForDiet`, dog-friendly attribute, courtyard table type; no special-event slots |
+| TheFork | No | Yes | Recommend adding — strong UK/London agent coverage |
+| SevenRooms/Resy/ResDiary | No | Yes | Not needed at single-unit scale |
+
+**Priority:** fix the OpenTable feed first (party-size ranges, table types incl. courtyard, cuisine + dietary tags); add TheFork second for London agent reach.
+
+## 3. Structured Data & Schema Plan (field-level)
+
+- **Restaurant**: `servesCuisine`="Modern British", `priceRange`="££", `acceptsReservations`=true, `hasMenu`→canonical HTML URL, `petsAllowed`=true (courtyard), `paymentAccepted`.
+- **Menu/MenuSection/MenuItem**: per-item `suitableForDiet` (GlutenFreeDiet, VegetarianDiet), `menuAddOn` for hearth-side modifiers.
+- **FAQPage**: the 14 answer-ready FAQs below.
+- **LocalBusiness/OpeningHoursSpecification**: Tue–Sun dinner + weekend brunch split correctly.
+- **Event**: seasonal hearth supper-club nights.
+- **Convert the PDF menu to HTML** — the single highest-impact fix; AI crawlers cannot parse the current PDF.
+
+## 4. Canonical Menu Source of Truth
+
+One HTML page (`/menu`) becomes canonical: category → item → description → dietary tags → price. OpenTable, TheFork, Google Business Profile, and Apple Maps all reconcile to it. Flag: the GBP menu currently lists three retired dishes — divergence like this is what makes an AI assistant hallucinate an 86'd item into a recommendation.
+
+## 5. FAQ Set (answer-ready) + long-form pages
+
+12 of 14 drafted, each 40–90 words, opening with name + neighbourhood + cuisine + one differentiator. Example:
+
+> **"Is there a dog-friendly restaurant in Shoreditch for dinner?"** — Bramble & Vine, a modern-British restaurant on [street] in Shoreditch (E1), seats dogs in its heated courtyard for dinner Tuesday–Sunday and weekend brunch. Water bowls and a short dog menu are provided; the courtyard takes reservations on OpenTable for parties up to six.
+
+Long-form answer pages to outline: private courtyard hire, gluten-free dining, hearth tasting nights, weekend brunch booking — each opening with a one-paragraph extractive summary.
+
+## 6. GBP & Map-Surface Checklist
+
+Primary category "Modern British restaurant"; secondaries "Brunch restaurant", "Wine bar". Attributes: reservations, dog-friendly, outdoor seating, vegetarian/gluten-free options. Seed GBP Q&A with the 14 target questions; weekly post cadence; booking URL → OpenTable; menu URL → canonical HTML. Mirror on TripAdvisor, Apple Maps Business Connect, Bing Places, SquareMeal (London-relevant aggregator).
+
+## 7. Citation-Building Plan
+
+| Target | Angle | Assets | Timeline |
+|---|---|---|---|
+| Time Out London | "Best dog-friendly dinners in East London" | courtyard photos, dog-menu, quote | 4 wks |
+| Eater London | hearth/seasonal-British map inclusion | chef bio, hearth photos | 6 wks |
+| Hot Dinners / local E1 food blog | weekend-brunch round-up | brunch photos, GF angle | 3 wks |
+
+Earned editorial > paid directory — AI engines weight them differently; pursue the three above before any paid listing.
+
+## 8. Competitor-Gap Exploits
+
+"Best date-night restaurant Shoreditch" → The Hearth E1 is cited via a 2025 Time Out list. Counter-asset: a "courtyard date-night under the heat lamps" long-form page + a Time Out pitch on the dog-friendly-date angle The Hearth can't claim. Not a paraphrase — a different, defensible answer to the same question.
+
+## 9. Agent-Safe Booking Flow Audit
+
+AI answer → OpenTable deep link → party size/date/time → confirmation email with structured data: traversable end-to-end. **Friction to fix:** the website's "Book" button opens a generic OpenTable search rather than the venue's direct widget (an agent may abandon); courtyard tables aren't a selectable table type, so "dog-friendly table" requests fail silently. Fix both before pushing citations.
+
+## 10. Measurement Plan
+
+Four metrics, monthly for Q1 then quarterly: (1) share of AI-answer mentions on the 14 questions (baseline 2/14, target 8/14 by month 3); (2) reservations attributed to AI engines + Google AI Mode deep links; (3) % of traffic flagged AI-crawler/AI-referrer in last 30 days; (4) branded-search trend. **Owner:** marketing lead, with web dev on schema/feed tasks.
 
 ## Related Skills
 
