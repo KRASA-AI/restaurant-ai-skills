@@ -5,7 +5,7 @@ tools: [claude, chatgpt]
 difficulty: advanced
 time_saved: "~8 hr/architecture evaluation"
 version: 1.0
-last_eval_score: null
+last_eval_score: 9.30
 ---
 
 # 🧠 Edge-AI Architecture Decision Brief

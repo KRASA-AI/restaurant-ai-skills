@@ -4,8 +4,8 @@ category: operations
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~6-10 hr/district/week"
-version: 1.1
-last_eval_score: 8.80
+version: 1.2
+last_eval_score: 9.00
 ---
 
 # 📸 Store Execution Audit Playbook
@@ -114,6 +114,15 @@ Target photo-compliance 92% by month 3 / 96% by month 6. MTTR < 24h for fails. 3
 
 No-photo zones: prep-station crew lockers, office. Legal-review owner: Area-GM.
 
+## 2. Brand-Standards Anchor Book (excerpt — 2 of top-20 items)
+
+| Item | Pass exemplar | Fail exemplars | Near-miss patterns |
+|---|---|---|---|
+| Picanha plating | Slices fanned, fat-cap up, chimichurri pooled at 5 o'clock, garnish centered | (a) fat-cap down; (b) chimichurri flooding the plate; (c) <6 slices on a full portion | Slices touching but un-fanned; garnish off-center; sauce smear on rim |
+| Restroom (hourly) | Dry sink, stocked towels, no floor debris, mirror streak-free | (a) standing water; (b) empty towel dispenser; (c) visible floor litter | Towel stack < 1/4 full; one streak on mirror; bin > 3/4 full |
+
+**Precondition flag:** Brasa & Bahia has no authoritative picanha-station pass exemplars (new build). A one-week field-photo capture sprint at Buckhead is a go-live precondition, not a phase-2 item — an AI photo model without an anchor exemplar will invent a standard the ops manual never authorized.
+
 ## 3. Per-Photo AI Review Prompt (paste into Crunchtime AI config)
 
 > "You are a brand-standards auditor for Brasa & Bahia reviewing a photo from [station] during [daypart]. Compare against these anchor exemplars: [picanha plating pass exemplar + 2 fail exemplars]. Return: verdict (pass/near-miss/fail); specific deviations; severity 1–5; recommended follow-up task. Reject before judging if blurry, wrong station, wrong daypart, or missing the required frame element. Score fixtures, food, and uniform items only — never an employee's appearance."
@@ -133,6 +142,20 @@ Fail → task card: title, role (shift lead/KM/GM), SLA (same shift / next open 
 
 > "You are a multi-unit ops analyst. Given 7 days of submissions across 4 stores, name the top anomalies: stores down >15 pts WoW; categories whose fail rate rose chain-wide; any issue in >30% of stores; near-miss patterns about to become fails. For each: stores implicated, suspected root cause (scheduling/inventory/training/turnover), single highest-leverage fix."
 Example finding: "Marietta line-station fails spike Sat 6–9pm → cross-ref Staff Schedule Optimizer: line is one short at that daypart."
+
+## 7. Above-Store Command-Center View (excerpt)
+
+**Area-GM (Maria) — 4-unit grid:** per-unit compliance (today / 7-day / 30-day), the two units drifting fastest (this week: Buckhead restroom 84%, Marietta line 88%), top-3 tasks past SLA, one-click "pull the photo." **Owner rollup:** 4-unit average compliance vs. the 92% target, MTTR trend, and anomaly-prediction accuracy (did last week's top anomalies become this week's actual fails?). Cap: three decisions per layer — no 14-chart dashboard. At the 8-unit scale this becomes a 2-district grid with a cross-district restroom/line comparison.
+
+## 8. Franchise Governance Overlay (built franchise-ready for the 8-unit scale)
+
+Operator-owned today, so no live franchisee tension — but the FAQ + agreement language are pre-built so the program ports cleanly when units 5–8 include a franchise partner. **FAQ covers:** corporate-sees-vs-franchisee-sees data split (fixtures/food/uniform only — never face-scoring), required participation, 24h/72h remediation window, consequence ladder (coaching call → PIP → default notice), privacy commitments (no biometric data, no retained guest imagery), and guest-incident photo ownership. **Agreement language adds:** audit-photo retention (90 days default; 2 years for food-safety photos), corporate-leak indemnification, and a termination-for-reputation clause for systemic brand-standards indifference.
+
+## 9. Integrations — Surveillance → Diagnosis (3 wired)
+
+> **Labor:** Marietta Sat-6–9pm line fails → Staff Schedule Optimizer shows the line one short → add a half-shift, re-measure.
+> **Inventory:** recurring "available but 86'd" 86-board fails at Decatur → Demand Forecast Briefing shows the protein order under-par on weekends → fix the standing order.
+> **Guest complaint:** Buckhead 3 restroom fails/week → pull the guest-review feed → mystery-shopper score is sliding too → restroom gets hourly→2x cadence (§1) until it recovers.
 
 ## 10. 90-Day Plan & Six-KPI Scorecard
 

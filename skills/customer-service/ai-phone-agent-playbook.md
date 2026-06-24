@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~3 hrs/deployment"
-version: 1.2
-last_eval_score: 8.90
+version: 1.3
+last_eval_score: 9.10
 ---
 
 # ☎️ AI Phone Agent Playbook
@@ -32,6 +32,7 @@ Provide the following:
 6. **Upsell priorities** — Highest-margin add-ons, current LTO (limited-time offer), beverage or dessert attachments to promote
 7. **Escalation rules** — When to transfer to a human (complaints, allergy concerns, large-party inquiries, VIP callers, press)
 8. **Compliance requirements** — PCI boundaries (never capture card data on the call if POS handles payment), state-specific calling laws, loyalty program opt-in language
+9. **Language coverage** — Which languages the vendor platform supports for live two-way conversation (not just a greeting), the restaurant's secondary guest language(s) by neighborhood demographics, and whether any near-term local event (e.g., World Cup 2026 host-city traffic) raises non-English call volume
 
 ## Instructions
 
@@ -64,6 +65,8 @@ You are a restaurant customer-experience designer and conversational AI architec
 9. **Metrics and tuning plan** — List the five KPIs the operator should track weekly: call-capture rate, order accuracy, reservation-completion rate, upsell attach rate, and human-handoff rate. Set week-1 targets and note which prompts to A/B test first.
 
 10. **PCI and compliance notes** — Confirm the agent never speaks, repeats, or logs card-number digits, CVV, or expiration. If the POS handles a payment link via SMS, write the exact hand-off line. Include the state-specific disclosure if calls are recorded.
+
+11. **Multilingual / bilingual handling** — A "language switch request" should not default to a human transfer when the vendor platform supports live two-way conversation in that language. Define the policy: (a) **auto-detect and continue in-kind** — if the caller opens or switches to Spanish (or another supported language), the agent completes the order/reservation flow in that language rather than escalating; (b) **preserve dish names** — never translate proper menu-item names (a "branzino" stays "branzino"); (c) **set the in-language threshold** — list which intents the agent can fully complete in-language (order, reservation, hours, menu Q&A) vs. which still escalate to a human in any language (allergy-severity, complaint, press, refund); (d) **fall back gracefully** — if mid-call comprehension confidence drops, the agent offers a callback from a bilingual team member rather than struggling. For restaurants in a 2026 World Cup host city (the tournament runs June–July 2026 across the US, Canada, and Mexico), recommend enabling Spanish (and Portuguese where relevant) call handling for the surge and writing a Spanish greeting + reservation-confirmation pair. Mirror any recorded-call disclosure (step 10) into each enabled language — a disclosure only in English does not cover a Spanish-language call.
 
 **Output requirements:**
 - Structured playbook document with numbered sections matching the process above
@@ -137,3 +140,10 @@ Call-capture ≥ 85% · order accuracy ≥ 95% · reservation-completion ≥ 90%
 Agent never speaks, repeats, or logs card number, CVV, or expiration. Payment = Toast SMS pay-link only:
 > "I'll text a secure link to the number you gave me — you can pay right from your phone."
 > Recorded-call disclosure (CA two-party): "Just so you know, this call may be recorded for quality."
+
+## 11. Multilingual Handling (Loman supports live Spanish; this is a Bay-Area neighborhood with steady Spanish call volume + a 2026 World Cup host-city surge)
+
+**Policy:** auto-detect Spanish and complete `new_order`, `reservation_new/modify/cancel`, `hours_location`, and `menu_question` in Spanish; keep dish names in Italian ("branzino", "tiramisù"). Still escalate to a human in **any** language on allergy-severity, complaint, press, or refund. If comprehension confidence drops mid-call, offer a bilingual callback rather than struggling on.
+> **Spanish greeting:** "Gracias por llamar a Trattoria Liguria — ¿desea hacer un pedido, reservar una mesa, o tiene una pregunta?"
+> **Spanish reservation confirmation:** "Listo — mesa para cuatro, el sábado a las 7:00, y anoté al invitado sin gluten para la cocina. ¡Nos vemos pronto!"
+> **Spanish recorded-call disclosure (mirrors §10):** "Para su información, esta llamada puede ser grabada para control de calidad."

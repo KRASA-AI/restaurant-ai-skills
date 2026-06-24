@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~4 hrs/location/wave"
-version: 1.2
-last_eval_score: 8.90
+version: 1.3
+last_eval_score: 9.10
 ---
 
 # 🚗 Drive-Thru AI Rollout Playbook
@@ -58,7 +58,7 @@ You are a QSR operations and conversational-AI rollout lead who has launched dri
 
 7. **Franchisee rollout governance** — Produce the FBC-ready brief: eligibility criteria for the wave (SoS baseline, accuracy baseline, training completion, signage refresh, liability acknowledgement), capex split (brand vs. franchisee), training schedule (manager certification, crew assist-moment training, coaching tools), go-live checklist, 4-week measurement window, and the go / hold / roll-back gate at the end of week 4. Include the exact FAQ script the FBC uses to answer franchisee objections ("Will this replace my employees?", "Who pays if the AI gets an order wrong?", "How do I turn it off during a rush?").
 
-8. **Human-assist and escalation triggers** — Specify the conditions that force human takeover: 3 classification failures in a row, any mention of "manager", "allergy" + severity word ("anaphylaxis", "severe", "nut"), "refund", "complaint", "missing", "wrong", language switch, caller-in-distress signals, system outage, or unified-layer ticket-stuck > 90 seconds. Define the bridge phrase the AI uses when handing off ("One moment, let me get someone on the line for you"), and the staff-side alert mechanism (KDS banner, headset beep, mobile push).
+8. **Human-assist and escalation triggers** — Specify the conditions that force human takeover: 3 classification failures in a row, any mention of "manager", "allergy" + severity word ("anaphylaxis", "severe", "nut"), "refund", "complaint", "missing", "wrong", a language switch to a language the platform does NOT support live (a switch to a supported language is handled in-language per step 13, not escalated), caller-in-distress signals, system outage, or unified-layer ticket-stuck > 90 seconds. Define the bridge phrase the AI uses when handing off ("One moment, let me get someone on the line for you"), and the staff-side alert mechanism (KDS banner, headset beep, mobile push).
 
 9. **Training and crew-assist plan** — Produce the short-form training for window and kitchen crew: what the AI does, what it doesn't, the 6 assist moments a human must cover (allergy confirmation, payment exception, upsell declined 3x, loud background, unfamiliar accent dropout, guest asks for manager), and the "be the friendly face" playbook at the window since the voice interaction is already done by the time the car arrives.
 
@@ -67,6 +67,8 @@ You are a QSR operations and conversational-AI rollout lead who has launched dri
 11. **Compliance and disclosure** — Draft the exact recorded-call disclosure ("Your order may be taken by our AI assistant and recorded for quality"), confirm the system logs no card data (PCI-safe hand-off if payment is taken at the window instead of at the order post), state-by-state biometric-data exclusions if cameras or voice ID are used, and the labor-posture statement for franchisees to use in internal and public communication.
 
 12. **Communication and launch pack** — Produce the launch-day comms pack: a one-page guest sign for the lane, a social-media launch post (paired with the brand's Social Media Post Generator voice), a 5-line crew briefing script, a 1-page franchisee FAQ, and a 1-paragraph press-ready response in case a local outlet picks up the story. Do not promise job elimination; frame the AI as freeing crew to serve guests at the window.
+
+13. **Bilingual lane handling** — Drive-thru voice platforms (SoundHound, ConverseNow, Hi Auto, Presto) increasingly support live Spanish ordering; treat a switch to a supported language as a feature, not an escalation. Define: (a) **auto-detect and continue** — the agent takes the full order in Spanish rather than dropping to a human, preserving canonical item IDs and the pricing-parity rule from step 1; (b) **OCS in the order language** — the advance order confirmation screen (step 5) renders the listening/finished/error strings in the language of the order so the guest can verify; (c) **upsell in-language** — translate the daypart upsell prompts (step 4) but keep proper item names; (d) **disclosure parity** — the recorded-call disclosure (step 11) plays in the order's language; (e) **escalation still language-agnostic** — allergy-severity, complaint, refund, and "manager" still force a human in any language. For brands with lanes in a 2026 World Cup host city (tournament June–July 2026 across the US, Canada, and Mexico), flag Spanish (and Portuguese where relevant) enablement as a surge-readiness item and time the wave cutover to avoid the AI learning-tax landing on a match-day peak.
 
 **Output requirements:**
 
@@ -143,3 +145,12 @@ GO if SoS ≤ 205s **and** accuracy ≥ 95% **and** capture ≥ 70%. HOLD (exten
 
 > "Your order may be taken by our AI assistant and recorded for quality."
 No card data captured at the post — payment at the window only. Biometric-rule check: no cameras/voice-ID in this wave, so no IL/TX BIPA-class exposure; re-review if Window Intelligence is added.
+
+## 13. Bilingual Lane Handling (ConverseNow Spanish live; GA/AL/TN cluster has steady Spanish drive-thru volume)
+
+Auto-detect Spanish and take the full order in Spanish — do **not** drop to a human. Canonical IDs and pricing-parity (§1) hold across languages; OCS strings render in the order's language; allergy-severity / "manager" / refund still escalate in any language.
+> **Spanish upsell (lunch, item names preserved):** "¿Quiere agregar un té dulce grande y papas para hacerlo combo?"
+> **OCS — Spanish:** Listening: "Entendido — ¿algo más?"  Finished: "Revise la pantalla y avance."  Error: "Presione el botón para un miembro del equipo."
+> **Spanish disclosure (mirrors §11):** "Su pedido puede ser tomado por nuestro asistente de IA y grabado para control de calidad."
+
+**World Cup note:** the 7/13 go-live is deliberately set *after* the World Cup host-city window so the Spanish-surge traffic does not collide with the week-1 learning tax.
