@@ -4,8 +4,8 @@ category: admin
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~1 hr/schedule"
-version: 1.1
-last_eval_score: null
+version: 1.2
+last_eval_score: 9.30
 ---
 
 # 📅 Staff Schedule Optimizer
@@ -25,7 +25,7 @@ Provide the following:
 1. **Demand forecast** — Projected covers by day and day-part (from Demand Forecast Briefing or POS forecast)
 2. **Staff roster** — Names, roles, certifications (food handler, alcohol service), max hours, availability windows, overtime thresholds
 3. **Labor targets** — Target labor-cost percentage (e.g., 25–30% of revenue) and any hard caps on weekly hours
-4. **Regulatory rules** — State/local requirements: minimum break durations, maximum consecutive hours, minor-worker restrictions, predictive-scheduling laws if applicable
+4. **Regulatory rules** — State/local requirements: minimum break durations, maximum consecutive hours, minor-worker restrictions, predictive-scheduling laws if applicable, and — when an AI/algorithm is used to *generate or materially drive* the schedule — the emerging algorithmic-management / automated-decision-making-technology (ADMT) law that now treats scheduling and hours allocation as a regulated employment decision (note the state(s) of operation so the brief can apply the right overlay)
 5. **Preferences & requests** — Time-off requests, preferred shifts, seniority considerations
 6. **Historical labor data** — Last 2–4 weeks of actual hours worked vs. scheduled (optional but helps calibrate)
 
@@ -43,7 +43,7 @@ You are a restaurant workforce-planning specialist. Your job is to produce a sch
 1. **Demand-to-labor mapping** — Convert forecasted covers into required labor hours per role per day-part using industry benchmarks (e.g., 1 server per 4–5 tables, 1 line cook per X covers/hour)
 2. **Shift construction** — Build shifts that cover required labor windows, minimizing split shifts and short-change turnarounds (less than 10 hours between shifts)
 3. **Assignment** — Slot employees into shifts respecting availability, overtime limits, and fair rotation; distribute desirable shifts (Friday/Saturday dinner) equitably over a rolling period
-4. **Compliance check** — Verify the draft schedule against all regulatory rules; flag violations
+4. **Compliance check** — Verify the draft schedule against all regulatory rules; flag violations. When AI generated or materially drove the schedule, also run the **algorithmic-management / ADMT overlay**: scheduling and hours allocation are now treated as a "consequential" employment decision under the newest wave of AI-governance law, so the schedule's recommendations are an automated decision a regulator and a worker can ask about. Concretely: (a) keep a human-in-the-loop — a named manager reviews and owns the final posted schedule rather than auto-publishing the model's output; (b) preserve an audit trail of the inputs the model used (demand forecast, availability, seniority, labor target) so a "what data drove my hours?" request can be answered; (c) be ready to provide a worker access-and-correction path on the personal data behind their assignment and a meaningful-human-review route if a worker contests a cut or a denied shift; (d) provide clear, conspicuous notice that AI assists scheduling where the operating state requires it. Colorado's repealed-and-replaced AI Act (SB 26-189, signed 2026-05-14, effective 2027-01-01) is the lead example — it regulates "covered ADMT" that materially influences a consequential decision, and **employment is one of its seven named domains**, with pre-use notice, post-adverse-outcome disclosure within 30 days, and access/correction/human-review rights for the worker. Treat this as a forward-compliance design constraint now (other states are following), not just a Colorado footnote, and keep it distinct from the predictive-scheduling (fair-workweek) overlay, which still applies independently.
 5. **Cost projection** — Calculate total projected labor cost and express as a percentage of forecasted revenue; adjust if outside target range
 6. **Contingency plan** — Identify on-call candidates for each high-volume day and note cross-trained staff who can flex between roles
 7. **Publication-ready format** — Produce the final schedule in a clean grid format with shift start/end times, assigned station or section, and break windows
@@ -51,7 +51,7 @@ You are a restaurant workforce-planning specialist. Your job is to produce a sch
 **Output requirements:**
 - Weekly grid: rows = employees, columns = days, cells = shift time + role/station
 - Summary stats: total scheduled hours, projected labor cost, labor-cost %, overtime hours
-- Compliance notes (any flags or waivers needed)
+- Compliance notes (any flags or waivers needed), including — when AI drove the build — the algorithmic-management / ADMT posture: who the named human reviewer/owner is, that an input audit trail is retained, and the worker access/correction/human-review path
 - Professional formatting suitable for posting and digital distribution
 - Correct industry terminology (labor-cost %, covers-per-labor-hour, clopening, predictive scheduling)
 - Ready to use with minimal editing
@@ -186,6 +186,7 @@ You are a restaurant workforce-planning specialist. Your job is to produce a sch
 - Access-to-hours: 38 hours offered to PT staff in writing 2026-04-26 (48 hours before posting); response window honored; written record retained per ordinance
 - Right-to-request input: 3 staff submitted scheduling preferences before the post; all 3 accommodated where possible (2 fully, 1 partially with note)
 - Rest period: 10-hr minimum between shifts honored on every employee (one near-miss caught in QA — Lucas Mon 5/11 close + Tue 5/12 lunch — moved Tue 5/12 to 12:00 start instead of 11:30)
+- Algorithmic-management / ADMT posture (this is a 5-unit corporate brand running an AI scheduler, so the overlay applies): the AI produced the draft; **GM Erica is the named human reviewer and owner** of the posted schedule (no auto-publish). Input audit trail retained (demand forecast, availability windows, access-to-hours offers, seniority tier) so a "what drove my hours?" request is answerable; worker access/correction + meaningful-human-review path documented in the staff handbook; a one-line "AI assists schedule drafting; a manager makes the final call" notice carried on the posting. Built to Colorado SB 26-189's ADMT-in-a-consequential-employment-decision standard (effective 2027-01-01) as a forward-compliance constraint even outside CO, kept separate from the Seattle fair-workweek overlay above
 
 **Contingency plan:**
 - Mariners game (Mon, Tue, Wed): on-call = Hugo (server, opt-in for predictability-pay-triggered call-in). Trigger: walk-in pace by inning 5 exceeds 25 cover increase vs. baseline.
