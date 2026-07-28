@@ -4,7 +4,7 @@ category: admin
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~1 hr/pricing review"
-version: 1.1
+version: 1.2
 last_eval_score: 9.40
 ---
 
@@ -17,6 +17,21 @@ Evaluate current menu prices against ingredient costs, local demand signals, and
 ## When to Use
 
 Use this skill during quarterly menu reviews, after significant supplier price changes, before seasonal menu launches, or whenever food-cost percentages drift outside target range. It works best when you can provide actual cost and sales data.
+
+## Compliance guardrail — cost/demand pricing vs. regulated personalized pricing
+
+**This skill sets ONE published price per item (optionally varied by day-part or event window) that every guest sees the same.** That is lawful cost-and-demand menu engineering. It is a different thing — legally — from **individualized pricing**, where an operator uses a specific guest's personal data (loyalty history, visit frequency, ordering preferences, location, device, or demographics) to show *that guest* a different price or a different offer than the guest standing next to them. A fast-growing body of state law now regulates the second thing, and restaurant loyalty apps are squarely in scope because they hold exactly the personal data these statutes target. Keep the two on opposite sides of a bright line:
+
+- **Permissible with this skill (uniform pricing):** cost passthroughs, contribution-margin repricing, day-part pricing, event/surge windows, bundles, anchoring and decoy layout — as long as the price is the same for every guest in that day-part or window.
+- **Regulated — route to counsel before recommending (personalized/"surveillance" pricing):** any price or auto-applied discount that is computed from an individual guest's personal data, or any loyalty offer that is *not* uniformly available to every eligible member on the same terms.
+
+When a pricing recommendation would cross into personalized territory, do NOT quietly bake it into the price table. Flag it, and carry these three constraints into the output:
+
+1. **Uniformity of loyalty offers.** Loyalty and app promotions should be uniformly offered and made available to all eligible members on the same terms. Segmenting the *audience you invite to join* is fine; delivering a different price to different members of the same program based on their behavioral profile is the exposure. Treat "personalized" campaigns that vary the actual discount by guest profile as a counsel-review item, not an auto-recommendation.
+2. **Algorithmic-pricing disclosure.** Some states now require a plain-language disclosure at the point of sale when a price is set for an individual using that person's personal data (the canonical form is a notice on the order screen stating the price was set by an algorithm using the guest's personal data). If the operator is doing — or is tempted to do — individualized pricing, the disclosure requirement travels with it. Uniform day-part/event pricing does not trigger this; personalized pricing does.
+3. **Financial-incentive / privacy posture.** Where a loyalty program trades a benefit for personal data, privacy regimes may treat the price difference as a "financial incentive" carrying its own opt-in-consent and value-explanation disclosures. This is a legal-review flag to raise in the brief, not something to resolve in the pricing math.
+
+Add a one-line **compliance posture note** to every pricing brief this skill produces: state explicitly that the recommended prices are uniform cost/demand adjustments (not individualized), or — if the operator has asked for personalized pricing — stop and route the individualized-pricing question to named counsel before publishing. Laws vary by state and change quickly; this skill flags the exposure and defers the legal determination, it does not give legal advice.
 
 ## Required Input
 
@@ -47,12 +62,14 @@ You are a restaurant financial strategist who specializes in menu engineering an
 5. **Day-part & event pricing** — Suggest time-based pricing opportunities (e.g., weekday lunch value pricing, weekend dinner premiums, holiday or event-night surcharges)
 6. **Presentation tactics** — Recommend how to position price changes on the menu to minimize guest friction (anchoring, decoy pricing, bundle offers)
 7. **Impact projection** — Estimate revenue and margin impact of the proposed changes at current volumes
+8. **Compliance check** — Confirm every recommended price is uniform (same for all guests in the day-part/window). If any recommendation would set a price or auto-discount from an individual guest's personal data, or would make a loyalty offer non-uniform across eligible members, apply the Compliance guardrail above: flag it, do not auto-recommend it, and route the individualized-pricing question to counsel
 
 **Output requirements:**
 - Summary table: item, current price, proposed price, change %, projected margin impact
 - Narrative explanation for each pricing tier
 - Professional formatting suitable for an owner/GM review meeting
 - Correct industry terminology (plate cost, contribution margin, menu engineering matrix, price anchoring)
+- A one-line **compliance posture note** stating the recommended prices are uniform cost/demand adjustments (not individualized from guest personal data), or — if personalized pricing was requested — a stop-and-route-to-counsel flag instead
 - Ready to use with minimal editing
 - Saved to `outputs/` if the user confirms
 

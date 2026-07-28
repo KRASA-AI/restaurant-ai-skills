@@ -4,8 +4,8 @@ category: customer-service
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~3 hrs/deployment"
-version: 1.3
-last_eval_score: 9.10
+version: 1.4
+last_eval_score: 9.20
 ---
 
 # ☎️ AI Phone Agent Playbook
@@ -31,7 +31,7 @@ Provide the following:
 5. **Brand voice** — Tone descriptors (warm, energetic, classic, neighborhood, upscale), signature phrases to use, words to avoid
 6. **Upsell priorities** — Highest-margin add-ons, current LTO (limited-time offer), beverage or dessert attachments to promote
 7. **Escalation rules** — When to transfer to a human (complaints, allergy concerns, large-party inquiries, VIP callers, press)
-8. **Compliance requirements** — PCI boundaries (never capture card data on the call if POS handles payment), state-specific calling laws, loyalty program opt-in language
+8. **Compliance requirements** — PCI boundaries (never capture card data on the call if POS handles payment), state-specific calling laws, loyalty program opt-in language, AI-identity disclosure posture (see step 10), and whether the agent ever places **outbound** calls or texts (callbacks, waitlist pings, reservation confirmations) — outbound is a different legal regime from inbound
 9. **Language coverage** — Which languages the vendor platform supports for live two-way conversation (not just a greeting), the restaurant's secondary guest language(s) by neighborhood demographics, and whether any near-term local event (e.g., World Cup 2026 host-city traffic) raises non-English call volume
 
 ## Instructions
@@ -48,7 +48,7 @@ You are a restaurant customer-experience designer and conversational AI architec
 
 1. **Greeting design** — Write three greeting variants: peak hours (brief, warm, fast-track), off-peak (slightly longer, invites questions), after-hours (acknowledges closure, offers callback or reservation booking for next open slot). Each greeting ends with a single clear prompt ("Are you calling to place an order, make a reservation, or ask a question?") to avoid open-ended stalls.
 
-2. **Intent router** — Define the top-level intents the agent must classify within the first guest utterance: new_order, modify_order, reservation_new, reservation_modify, reservation_cancel, hours_location, menu_question, allergy_question, large_party, complaint, gift_card, human_request. Specify the disambiguation question for each ambiguous phrase ("a table" vs "pickup", "party of 12" triggers large_party).
+2. **Intent router** — Define the top-level intents the agent must classify within the first guest utterance: new_order, modify_order, reservation_new, reservation_modify, reservation_cancel, hours_location, menu_question, allergy_question, large_party, complaint, gift_card, human_request, ai_identity_question ("am I talking to a robot?" — see step 10b). Specify the disambiguation question for each ambiguous phrase ("a table" vs "pickup", "party of 12" triggers large_party).
 
 3. **Takeout order flow** — Build a turn-by-turn script: confirm pickup vs delivery, take items with explicit modifier prompts, read back the full order, apply upsell at the correct moment (after entrée selection, before payment — never more than one upsell per call), quote ready-time pulled from kitchen ticket-time norms, confirm caller name and callback number, hand off to POS.
 
@@ -66,7 +66,15 @@ You are a restaurant customer-experience designer and conversational AI architec
 
 10. **PCI and compliance notes** — Confirm the agent never speaks, repeats, or logs card-number digits, CVV, or expiration. If the POS handles a payment link via SMS, write the exact hand-off line. Include the state-specific disclosure if calls are recorded.
 
-11. **Multilingual / bilingual handling** — A "language switch request" should not default to a human transfer when the vendor platform supports live two-way conversation in that language. Define the policy: (a) **auto-detect and continue in-kind** — if the caller opens or switches to Spanish (or another supported language), the agent completes the order/reservation flow in that language rather than escalating; (b) **preserve dish names** — never translate proper menu-item names (a "branzino" stays "branzino"); (c) **set the in-language threshold** — list which intents the agent can fully complete in-language (order, reservation, hours, menu Q&A) vs. which still escalate to a human in any language (allergy-severity, complaint, press, refund); (d) **fall back gracefully** — if mid-call comprehension confidence drops, the agent offers a callback from a bilingual team member rather than struggling. For restaurants in a 2026 World Cup host city (the tournament runs June–July 2026 across the US, Canada, and Mexico), recommend enabling Spanish (and Portuguese where relevant) call handling for the surge and writing a Spanish greeting + reservation-confirmation pair. Mirror any recorded-call disclosure (step 10) into each enabled language — a disclosure only in English does not cover a Spanish-language call.
+10b. **AI-identity disclosure (write the line; do not leave it to the vendor)** — A restaurant voice agent that never says it is an agent is the single most common compliance and trust gap in a rollout, and vendor defaults do not reliably cover it. Design the disclosure explicitly:
+
+   - **Draft the line and put it in the greeting**, not buried in a menu tree. Keep it one clause, in brand voice, before the first intent prompt: *"You've reached [Restaurant] — I'm the restaurant's automated assistant, and I can take an order or book a table."* The safe operating default is **proactive disclosure on the first turn of every call**, in every language the agent handles (mirror it exactly the way the recorded-call disclosure in step 10 is mirrored — an English-only disclosure does not cover a Spanish-language call).
+   - **Know which regime you are in.** *Inbound* (the guest called you) and *outbound* (the agent calls or texts the guest) are legally different. Inbound bot disclosure is driven by state law: California's **B.O.T. Act (SB 1001)** requires clear and conspicuous disclosure when a bot is used to incentivize a commercial transaction; **Utah's AI Policy Act (SB 149, as amended by SB 226, effective 2025-05-07)** requires disclosure *on request* in consumer transactions and *affirmative, prominent* disclosure for regulated occupations; **Texas TRAIGA (HB 149, effective 2026-01-01)** mandates disclosure for **state agencies, not private businesses** — do not tell a Texas operator they are covered when they are not, and do not tell a California operator they are safe because Texas exempted them. State law here moves fast; confirm the current text with counsel before print.
+   - **Outbound is the sharper edge.** An AI-voiced callback, waitlist ping, reservation-confirmation call, or marketing text is an outbound communication and picks up TCPA/consent, do-not-call, and calling-window obligations that an inbound answering agent does not. If the operator wants outbound, treat it as a separate project with its own consent capture — do not let it ride in on the inbound rollout.
+   - **"Are you a robot?" is a scripted intent, not an edge case.** Add it to the intent router (`ai_identity_question`) and script an honest, warm, non-defensive answer that offers a human immediately: *"I am — I'm the restaurant's assistant. Want me to get a person on the line?"* Never deny it, never dodge, never let the agent claim a human name.
+   - **Log the disclosure.** The audit trail should show the disclosure was played on each call, in which language, so the operator can prove it later.
+
+11. **Multilingual / bilingual handling** — A "language switch request" should not default to a human transfer when the vendor platform supports live two-way conversation in that language. Define the policy: (a) **auto-detect and continue in-kind** — if the caller opens or switches to Spanish (or another supported language), the agent completes the order/reservation flow in that language rather than escalating; (b) **preserve dish names** — never translate proper menu-item names (a "branzino" stays "branzino"); (c) **set the in-language threshold** — list which intents the agent can fully complete in-language (order, reservation, hours, menu Q&A) vs. which still escalate to a human in any language (allergy-severity, complaint, press, refund); (d) **fall back gracefully** — if mid-call comprehension confidence drops, the agent offers a callback from a bilingual team member rather than struggling; (e) **gate each language on live two-way support, and move the disclosure with it** — before enabling a language, confirm the vendor platform handles live two-way conversation in it (not just a greeting). If a language the neighborhood speaks (e.g., Thai, Vietnamese, Tagalog) is *not* supported for live handling, do not assert a disclosure the agent cannot honor mid-conversation: the agent greets and discloses in a supported language, then routes that caller to a human, and the AI-identity and recorded-call disclosure obligation for the unsupported language shifts to that human at pickup. Name, per language, whether it is "live-handled" or "greet-and-route," so no caller hears a disclosure the bot cannot back up. For restaurants in a 2026 World Cup host city (the tournament runs June–July 2026 across the US, Canada, and Mexico), recommend enabling Spanish (and Portuguese where relevant) call handling for the surge and writing a Spanish greeting + reservation-confirmation pair. Mirror any recorded-call disclosure (step 10) into each enabled language — a disclosure only in English does not cover a Spanish-language call.
 
 **Output requirements:**
 - Structured playbook document with numbered sections matching the process above
@@ -90,13 +98,15 @@ The agent answers every call 24/7, takes takeout orders into Toast, books/modifi
 
 ## 1. Greetings (paste into Loman → Greetings)
 
-> **Peak (Fri–Sat 6–9pm):** "Thanks for calling Trattoria Liguria — are you calling to place an order, make a reservation, or ask a question?"
-> **Off-peak:** "Good evening, you've reached Trattoria Liguria. I can take an order, book a table, or answer anything about the menu — what can I do for you?"
-> **After-hours (closed):** "Thanks for calling Trattoria Liguria — we're closed right now, but I can book you a table for our next open evening or answer a quick question. Which would you like?"
+> **Peak (Fri–Sat 6–9pm):** "Thanks for calling Trattoria Liguria — I'm the restaurant's automated assistant. Are you calling to place an order, make a reservation, or ask a question?"
+> **Off-peak:** "Good evening, you've reached Trattoria Liguria — I'm the restaurant's automated assistant. I can take an order, book a table, or answer anything about the menu — what can I do for you?"
+> **After-hours (closed):** "Thanks for calling Trattoria Liguria — I'm the restaurant's automated assistant. We're closed right now, but I can book you a table for our next open evening or answer a quick question. Which would you like?"
+
+Every greeting carries the AI-identity disclosure in its first clause (§10b), in brand voice, before the intent prompt. No variant omits it.
 
 ## 2. Intent Router
 
-Top-level intents classified on first utterance: `new_order`, `modify_order`, `reservation_new`, `reservation_modify`, `reservation_cancel`, `hours_location`, `menu_question`, `allergy_question`, `large_party` (9+), `complaint`, `gift_card`, `human_request`. Disambiguation: "a table tonight" → `reservation_new`; "pick something up" → `new_order`; "party of 12" → `large_party` (auto-escalate).
+Top-level intents classified on first utterance: `new_order`, `modify_order`, `reservation_new`, `reservation_modify`, `reservation_cancel`, `hours_location`, `menu_question`, `allergy_question`, `large_party` (9+), `complaint`, `gift_card`, `human_request`, `ai_identity_question`. Disambiguation: "a table tonight" → `reservation_new`; "pick something up" → `new_order`; "party of 12" → `large_party` (auto-escalate); "wait, is this a real person?" → `ai_identity_question` (answer honestly, offer a human — never deny, never dodge; see §10b).
 
 ## 3. Takeout Flow (excerpt)
 
@@ -113,7 +123,7 @@ Top-level intents classified on first utterance: `new_order`, `modify_order`, `r
 ## 6. Edge-Case Library (excerpt — 2 of 20)
 
 > **Gluten-free assurance:** "Most of our pasta can be made with gluten-free penne, and the kitchen uses a separate pot. I'll flag it on the order so the chef sees it — does anyone in the party have a severe reaction?" (a "severe"/"anaphylaxis" reply triggers §7 human transfer)
-> **Corkage / BYO:** "We allow one bottle with a £20 corkage on wine — would you like me to note that on your reservation?"
+> **Corkage / BYO:** "We allow one bottle with a $20 corkage on wine — would you like me to note that on your reservation?"
 
 ## 8. Tone & Voice Calibration (brand voice: warm, classic, neighborhood-host)
 
@@ -140,6 +150,19 @@ Call-capture ≥ 85% · order accuracy ≥ 95% · reservation-completion ≥ 90%
 Agent never speaks, repeats, or logs card number, CVV, or expiration. Payment = Toast SMS pay-link only:
 > "I'll text a secure link to the number you gave me — you can pay right from your phone."
 > Recorded-call disclosure (CA two-party): "Just so you know, this call may be recorded for quality."
+
+## 10b. AI-Identity Disclosure (California operator — B.O.T. Act applies)
+
+**Posture:** proactive disclosure in the first clause of all three greetings (§1), in both English and Spanish (§11). Trattoria Liguria is a California business using a bot to take orders and bookings — a commercial transaction — so the **B.O.T. Act (SB 1001)** clear-and-conspicuous standard governs. Loman's default greeting did *not* disclose; the GM overrode it. Counsel reviewed the line before go-live.
+
+> **`ai_identity_question` script:** "I am — I'm the restaurant's assistant, not a person. I can finish your reservation, or I'm happy to get someone from the team on the line. Which would you prefer?"
+> **Spanish:** "Sí — soy el asistente automatizado del restaurante, no una persona. Puedo terminar su reserva, o le paso con alguien del equipo. ¿Qué prefiere?"
+
+**Never:** deny being an agent, adopt a human first name ("Hi, this is Sofia"), or answer "are you a robot?" with a deflection.
+
+**Outbound is out of scope for this rollout.** Loman will answer inbound calls only. The waitlist-ping SMS and the "your table is ready" callback the GM asked about are **outbound** — different regime (TCPA/consent, DNC, calling windows), so they are deferred to a separate project with its own consent capture rather than bolted onto week 1.
+
+**Audit trail:** Loman logs disclosure-played = true and the language per call; the GM spot-checks 10 calls weekly against the recording.
 
 ## 11. Multilingual Handling (Loman supports live Spanish; this is a Bay-Area neighborhood with steady Spanish call volume + a 2026 World Cup host-city surge)
 

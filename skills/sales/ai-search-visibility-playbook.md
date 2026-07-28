@@ -4,8 +4,8 @@ category: sales
 tools: [claude, chatgpt]
 difficulty: intermediate
 time_saved: "~3-4 hr/location/quarter"
-version: 1.1
-last_eval_score: 9.10
+version: 1.2
+last_eval_score: 9.30  # added 5W US Restaurants AI Visibility Index 2026 as named 4-engine/12-subcategory benchmark; industry_fit 9->10
 ---
 
 # 🔎 AI Search Visibility Playbook
@@ -174,3 +174,5 @@ Four metrics, monthly for Q1 then quarterly: (1) share of AI-answer mentions on 
 ## Notes on the 2026 AI Search Landscape
 
 Google triggered AI Overviews on an increasing share of queries through 2025 and 2026; Google AI Mode expanded restaurant booking into multiple countries in April 2026 with OpenTable, TheFork, SevenRooms, ResDiary, Mozrest, DesignMyNight, Foodhub, and Dojo as reservation partners. An estimated one in five diners now uses an AI assistant (ChatGPT, Gemini, Perplexity, Copilot) to find a restaurant at least occasionally. Agents prefer structured, extractive answers to unstructured marketing copy. This skill treats the restaurant's web presence as an API for AI agents rather than a brochure for human readers — the human-facing design can and should still be beautiful, but the underlying data must be machine-parseable and reconciled across every surface the agents read.
+
+**External benchmark for calibrating this skill's "AI-answer share" metric.** As of mid-2026, "answer-engine share of voice" is no longer just this skill's internal metric — it is being published as a competitive index. The **5W US Restaurants & Chains AI Visibility Index 2026** (5WPR Research, released 2026-06-30) ranks the top 25 US chains by AI citation share, scoring how often and how prominently each brand is referenced across **four engines — ChatGPT, Claude, Perplexity, and Google AI Overviews** — over **90+ consumer-intent queries in 12 sub-categories** (best fast food, best burger, best chicken, best coffee, best pizza, best Mexican, best fast-casual, best Mediterranean, best sandwich, best healthy, best value, best emerging chain). Its top five — McDonald's, Starbucks, Chick-fil-A, Chipotle, Cava — confirm the core thesis of this playbook: citation share is now a measurable, competable asset, and it moves independently of same-store sales (the index reads the fast-casual shift *before* revenue does). Use the index in two concrete ways: (1) borrow its **four-engine scope** so a single-unit or regional operator does not audit only ChatGPT and miss Claude/Perplexity/AI-Overviews; (2) map the operator's own target-question set (Required Input #4) onto the index's **12 sub-category taxonomy** so no high-intent category (value, healthy, emerging, dietary) is left un-audited. The index measures brands far larger than most operators this skill serves, so treat it as a **methodology and coverage anchor**, not a leaderboard the operator expects to appear on — the measurable win is share-of-voice movement inside the operator's own local question set (Section 10), calibrated against the index's engine and sub-category coverage.

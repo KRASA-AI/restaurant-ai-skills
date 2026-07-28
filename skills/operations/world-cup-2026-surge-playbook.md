@@ -10,6 +10,8 @@ last_eval_score: null
 
 # ⚽ World Cup 2026 Surge Playbook
 
+> **⏱ Timing status (updated 2026-07-20):** The 2026 tournament has concluded — the Final was played **July 19, 2026**. If you are running this playbook on or after that date, the live portion is now **Step 11 (after-tournament wind-down)** and **Step 12's decision log / lessons file**, not the eight-week run-up. Treat Steps 1–10 as a **reusable surge template**, not a countdown: the same structure re-arms for the next sustained multi-week event in the operator's market — the 2028 LA Summer Olympics, the recurring Copa América / Gold Cup / FIFA Club World Cup windows, and the 2027 NCAA Final Four and 2028 Super Bowl host-city rotations. Do **not** delete the assets this playbook produced at wind-down (the bundle pack, the multilingual disclosure pack, the supplier backup list, the reservation-grid override); file them in the operator's playbook library. To reuse the skill for a future event, swap the dates, host cities, and diaspora-team map, and the rest of the plan holds.
+
 ## Purpose
 
 Produce a single-restaurant or multi-unit operator's end-to-end preparation plan for the FIFA World Cup 2026 (June 11 – July 19, 2026, 16 host cities across the United States, Canada, and Mexico) — a six-and-a-half-week sustained surge event that compresses a year's worth of mega-event prep into eight weekends. Covers the match-window and host-city impact map, the surge staffing plan with multilingual hiring and training, the match-day bundle and themed-menu programming, the watch-party programming that turns any room with a TV outside the host cities into a destination, the multilingual operations layer (menu, kiosk, POS prompts, signage, staff scripts, allergen and dietary disclosures), the international payment and tipping transparency posture (service charge disclosure aligned to the Florida July 1 service-charge transparency law, the Colorado pricing-transparency rule already in force, and FTC-compliant auto-gratuity language for international guests), the AI-driven match-day demand forecast that ingests external signals (KAYAK Ask AI flight searches, RateGain FIFA World Cup 2026 Market Pulse Dashboard, Sojern host-city booking pacing, hotel-occupancy feeds, public Fan Fest schedules), the supply-chain stress test, the reservation and walk-in surge management plan, the after-tournament wind-down plan, and the risk register. Produces an eight-week countdown plan a GM can paste into the calendar today and a tournament-day operating rhythm a multi-unit COO can publish to district managers.
@@ -141,6 +143,17 @@ You are a multi-unit restaurant operations director who has shipped surge plans 
 | Wing supply shortfall | Chef | Sysco delivery short by 15%+ | Backup distributor (US Foods + 2 local), pre-tournament bulk order Jun 1 |
 | Heat-index over 95°F on stadium day | GM | Local NWS warning at 9am | Patio shade pre-staged, 4 box fans, ice-machine pre-clean Jun 5, water-glass refill on every table |
 | Multilingual window staffing gap | FOH Manager | Sick call on diaspora match window | On-call agency-floater + AI multilingual chat surface (host-stand iPad) as backstop |
+
+## Post-Tournament Wind-Down (Jul 19 – Aug 2) — the now-live section
+| Action | Owner | Date | Trigger / Note |
+|---|---|---|---|
+| Cut surge FOH 22→16, BOH 16→13 (−30%) | GM | Jul 21 | J-1 and agency floaters roll off; 2 tournament veterans retained through Labor Day |
+| De-launch the 12-bundle pack; keep the 2 top-attach bundles as a "Tournament Highlights" mini-pack through Labor Day | Marketing Lead | Jul 26 | Group Stage Pitcher & Pizza (22% attach) and Round of 16 Wing Drop (18%) earned the extension; the rest retire |
+| Revert the patio TV install; return 2 rented screens | Facilities | Jul 24 | Keep 1 patio screen only if summer-league / MLS demand justifies |
+| Move the hotel-concierge partner program to a quarterly cadence (do not dissolve) | GM | Jul 28 | Re-arm for the 2028 LA Olympics; keep the one-page partner deck on file |
+| Post-tournament measurement review vs. the pre-tournament expectation | GM + Ops Director | Jul 30 | Covers/revenue lift by day-part, bundle attach, tip % on international tables, third-party share, Q3 guest-recovery curve |
+| File the one-page lessons document for the next mega-event | Ops Director | Aug 1 | Next equivalent for an Atlanta-area operator: 2028 LA Summer Olympics = travel-hub overflow demand, not a host-city stadium draw — adjust the impact map accordingly |
+| Watch the demand cliff: hold a light LTO or loyalty pulse for the first 2 soft weeks | Marketing Lead | Jul 20 – Aug 2 | The post-surge trough is a known risk (Step 12 risk h); a small pulse smooths the guest-recovery curve |
 ```
 
 ## Cross-References

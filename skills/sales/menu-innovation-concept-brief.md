@@ -4,8 +4,8 @@ category: sales
 tools: [claude, chatgpt]
 difficulty: advanced
 time_saved: "~8-15 hr/concept slate/quarter"
-version: 1.1
-last_eval_score: 9.00  # content refreshed (autonomous-agent boundary); dims already at ceiling, weighted held
+version: 1.2
+last_eval_score: 9.20  # worked-example extended: downstream autonomous-agent handoff table demonstrates the boundary; output_quality 9->10
 ---
 
 # 🧪 Menu Innovation Concept-Validation Brief
@@ -111,6 +111,17 @@ Concept #1 advanced as a handheld over a platter variant (handhelds index higher
 ## Staged Test Design
 
 Buckhead + Decatur (control-matched on AUV and daypart mix), 6 weeks. Go-wider thresholds: ≥6% attach, ≥60% incremental (not cannibalizing the mojo-pork sandwich), ≥25% 4-week repeat, ≤8 added prep seconds at peak. Kill thresholds: <3% attach or >20% line-complaint rate. **Predicted-vs.-actual log** opened for all 9 scored concepts so Q4's screen calibrates against this slate.
+
+## Downstream Autonomous-Agent Handoff (guardrails inherited from this brief)
+
+Brasa & Bahia runs a Deliverect-class autonomous menu/promo agent on its digital channels. Per the *When to Use* boundary, that agent is a downstream execution layer — it may only optimize concepts that cleared this brief's gates, and it inherits the guardrails below. Neither advanced concept is handed to the agent yet: both are still in test and have no predicted-vs.-actual read, so a human owns every change during the 6-week window. The table is written now so the handoff rules are settled before the test closes.
+
+| Advanced concept | Agent may autonomously adjust | Agent may NEVER cross (hard guardrails) | Handoff trigger | Human owner |
+|---|---|---|---|---|
+| Guava Brasa Melt | menu-tile placement, photo/hero rotation, price within the 66–70% CM band, day-part promo timing, bundle pairing | drop below the 66% margin floor; alter the "guava-glazed / grilled chicken" build or its allergen line; add any health/provenance claim; touch the forbidden-zone list | 3 consecutive weeks of actual pull in-band vs. predicted (High), CM ≥ floor, ≤8 prep-sec confirmed at scale | VP Culinary |
+| Plantain breakfast bowl | tile placement, breakfast-daypart promo timing, price within the 62–66% CM band, cross-sell pairing | drop below the 62% margin floor; change the plantain-crust build or "made-with" language; extend past the breakfast daypart without human sign-off; touch the forbidden-zone list | same in-band calibration rule; requires 4-week repeat ≥25% held at scale | VP Culinary |
+
+Claims, allergens, brand-voice, and the forbidden-zone list stay human-reviewed for both — an autonomous optimizer earns a longer leash on placement, timing, and in-band pricing only after the predicted-vs.-actual log shows the concept performing in-band, and never on claims or allergens. The predicted-vs.-actual log is the governance record that authorizes each leash extension.
 
 ## Cross-References
 

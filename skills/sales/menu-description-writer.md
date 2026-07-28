@@ -4,8 +4,8 @@ category: sales
 tools: [claude, chatgpt]
 difficulty: beginner
 time_saved: "~8 min/item"
-version: 1.3
-last_eval_score: 8.90
+version: 1.4
+last_eval_score: 9.30
 ---
 
 # 🍽️ Menu Description Writer
@@ -71,8 +71,19 @@ You are a menu copywriter with experience writing for James Beard–level kitche
 
 13. **Multilingual descriptions (when required)** — For operators in World Cup 2026 host cities (LA / SF / SEA / KC / DAL / HOU / ATL / NYC-NJ / BOS / PHL / MIA + the three CA, MX, US co-host markets), bilingual EN/ES (and EN/PT for Brazil-match windows) menu inserts are now a guest-facing expectation during the June 11 – July 19 window. Rules: (a) draft directly in the target language — never machine-translate; (b) preserve dish names exactly as they appear on the EN menu (italicize foreign terms once, no double-italics in the translated line); (c) preserve allergen badge convention identically across both languages — (GF) (V) (VG) (DF) (NF) stay the same; (d) preserve provenance proper nouns exactly (Frantoia, Mangalitsa, Oaxaca, San Marzano D.O.P. — these are not translated); (e) match target-language guest expectations on spice-ladder vocabulary (ES "suave / medio / picante / muy picante"; PT "suave / médio / picante / muito picante"); (f) for tasting-menu courses, the ES/PT line is the same target word count as the EN line (±10%); (g) for delivery platforms in bilingual markets, both languages on the same item line if the platform allows (DoorDash US Spanish-language toggle live since 2024; Uber Eats since 2025); (h) high-risk claims ("organic," "wild-caught," "GF available," "no shared fryer") translate verbatim and carry the same compliance audit as the EN line.
 
+14. **Agent-readable pass (the fourth reader)** — Menu copy now has four readers, not three: the guest, the server, the search engine — and, since 2026, an **AI agent** placing the order on the guest's behalf (ChatGPT/Claude checkout, an AI concierge, a voice agent). Human-persuasive copy and agent-parseable copy are not the same artifact, and prose written only for the first will be silently mis-parsed by the fourth. Rules:
+
+   - **Every dish needs one canonical name, used identically everywhere** — print, POS, web, delivery, structured data. "Chicken Mole Bowl" on DoorDash and "Pollo en Mole Negro Bowl" on the website are, to an agent, two different dishes; one of them will look unavailable.
+   - **Put the facts an agent must act on in fields, not in prose.** Price, availability, daypart, spice level, portion size, and allergens must exist as structured attributes (`schema.org/Menu` → `MenuSection` → `MenuItem`, with `offers`, `suitableForDiet`, `menuAddOn` for modifiers), not only inside a sentence. An agent can read "not spicy-hot" in a paragraph; it cannot reliably *filter* on it.
+   - **Modifiers must be enumerable.** "Ask the cashier" is a dead end for an agent. Every swap the guest can actually make ("V version: omit queso, add roasted poblano") needs to exist as a selectable modifier with its own price delta — or the agent will drop the order or order it wrong.
+   - **Allergens are a machine-readable field first, a badge second.** Keep the human badge convention from step 7 exactly as-is, and *additionally* carry the allergen set as data. A hallucinated allergen answer from a third-party agent is the operator's risk, and the only defense is authoritative structured data the agent can quote instead of guessing.
+   - **Never let the agent-readable line drift from the guest-facing line.** The structured record is derived *from* the approved copy, not written separately. If the chef 86's an item or changes a spec, the same edit must land in both — a stale structured record is worse than none, because agents trust it.
+   - **Keep the persuasion.** This pass adds a field layer; it does not flatten the prose. The sensory copy is what wins the guest when a human reads the menu — and increasingly, what an agent quotes when the guest asks it *"what's good here?"* Specific, honest, concrete language survives summarization; "succulent" does not.
+   - **Handoff:** the structural decisions (which platform, which checkout stance, who owns the feed) belong to `sales/agentic-ordering-app-readiness-brief.md` and `sales/digital-menu-optimization-brief.md`. This skill's job is narrower and unskippable: the per-item copy and the per-item field set that those decisions depend on.
+
 **Output requirements:**
 - Dish-by-dish table: dish name, category, house description (target length), POS/delivery line (short), digital version (long)
+- Agent-readable field set per dish: canonical name, price, allergen set, dietary flags, spice level, enumerable modifiers with price deltas, availability/daypart — flagged wherever the current menu carries a fact in prose that an agent would need as a field
 - Allergen and dietary badge pass: each dish tagged consistently per house convention
 - Menu-engineering note per dish: classification, copy-strength tier applied, rationale
 - Flagged items: any claim that needs chef/owner verification, any banned clichés removed, any compliance concern
@@ -147,6 +158,20 @@ You are a menu copywriter with experience writing for James Beard–level kitche
 > Chef Sofia's grandmother's recipe — chicken thigh braised three hours, then folded into a *mole negro* simmered six hours from toasted ancho, mulato, and pasilla chiles, sesame, almond, and Oaxacan chocolate. Smoky, deep, gentle on heat.
 >
 > *(Contains: tree nut, sesame, dairy. V swap: omit queso, add roasted poblano — ask the cashier.)*
+
+**Agent-readable field set (step 14 — this dish is the cautionary case):**
+
+The human copy above is doing its job. The *machine* record was failing in three specific ways, each of which costs orders:
+
+| Field | Before (prose-only) | After (structured) |
+|---|---|---|
+| Canonical name | "Pollo en Mole Negro Bowl" (web) vs. "Chicken Mole Bowl" (DoorDash) | **One name everywhere:** `Chicken Mole Bowl (Pollo en Mole Negro)` — the ES name is retained in the display string, not as a second dish |
+| Spice | "not spicy-hot" (buried in a sentence) | `spiceLevel: mild` — now *filterable*; the dish had been dropping out of "not spicy" agent queries despite the copy saying so in plain English |
+| V modifier | "V version available — ask the cashier" | `menuAddOn: [{name: "Vegan swap — omit queso, add roasted poblano", priceDelta: 0.00}]` — selectable, priced, orderable without a human |
+| Allergens | badge line "(Contains: tree nut, sesame, dairy)" | badge **kept verbatim** + `allergens: [tree_nut, sesame, dairy]` as data, so a third-party agent quotes the operator's record instead of guessing at "does the mole have nuts?" |
+| Offer | $14.50 in the price column | `offers: {price: 14.50, availability: InStock, availabilityStarts: 11:00}` — lunch-daypart bounded |
+
+**Why it matters here specifically:** this is the Puzzle — 71% margin, 4× under-turned. The copy job (demystify the chocolate-mole) was done well and *still* underperformed on the agentic channel, because an agent asked for "a not-spicy chicken bowl, no dairy" could not see that this dish qualifies on both counts. The vegan swap existed only as an instruction to speak to a human. The persuasive prose is unchanged; the fields are what make it reachable.
 
 **Compliance flags:** "Six hours" mole simmer verified with kitchen log. "Oaxacan chocolate" verified — Mayordomo from Oaxaca on the spec. "Not spicy" claim is honest at the current chile blend (Scoville ~800). The "grandmother's recipe" claim verified with Chef Sofia in writing — keep the line.
 

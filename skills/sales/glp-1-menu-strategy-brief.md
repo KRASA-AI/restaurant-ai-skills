@@ -103,7 +103,12 @@ You are a menu-strategy consultant who has shipped chain-wide menu refreshes aga
 |---|---|---|---|---|---|---|---|
 | Grilled Chicken Bowl | Lunch / Dinner | 480 | 38 | 28 | 72% | 8% | Protein-Forward 20g+ |
 | Egg White Breakfast Bowl | Breakfast | 320 | 26 | 14 | 78% | 5% | Protein-Forward 20g+ |
-| ... | ... | ... | ... | ... | ... | ... | ... |
+| Steak & Egg Protein Box | Breakfast | 410 | 34 | 9 | 70% | 4% | Protein-Forward 20g+, ≤30g net carb |
+| Grilled Chicken Caesar (no crouton) | Lunch | 390 | 35 | 11 | 74% | 6% | Protein-Forward 20g+, ≤30g net carb |
+| Half-Size Carnitas Bowl | Lunch / Dinner | 360 | 24 | 26 | 69% | 3% | Smaller-Portion + 20g+ |
+| Greek Yogurt Power Parfait | Breakfast / Snack | 240 | 20 | 22 | 76% | 4% | Protein-Forward 20g+ |
+| Grilled Salmon Plate | Dinner | 520 | 40 | 12 | 66% | 3% | Protein-Forward 20g+, ≤30g net carb |
+| ... (rest of 12 built the same way — one qualifying item minimum per daypart) | ... | ... | ... | ... | ... | ... | ... |
 
 ## Macronutrient Label Pack
 - **Kiosk badge:** circular icon + "26g Protein" beside item name
@@ -111,6 +116,18 @@ You are a menu-strategy consultant who has shipped chain-wide menu refreshes aga
 - **Web menu:** macro card on hover with calories, protein, net carbs, fiber
 - **Third-party delivery:** description-line callout — "26g protein • 14g net carbs"
 - **Footer microcopy (any GLP-1 surface):** "Talk to your doctor or registered dietitian about what fits your eating plan."
+
+## Claim Ladder — Say This / Not That (FTC + FDA compliance)
+| ❌ Never say | ✅ Say instead | Why |
+|---|---|---|
+| "Lose weight with our High-Protein menu" | "Higher-protein options to fit a protein-forward eating pattern" | Direct weight-loss claim — FTC deceptive-advertising exposure + litigation risk |
+| "Recommended for GLP-1 / Ozempic users" | "Options many guests choose while eating protein-forward" | Medical / endorsement claim tied to a prescription drug |
+| "Curbs your appetite" / "Keeps you full for hours" | "26g of protein per serving" | Physiological / satiety claim — state the macro fact, never the bodily effect |
+| "Doctor-approved" / "Dietitian-recommended" | "Talk to your doctor or registered dietitian about what fits your eating plan" | Implied professional endorsement |
+| "GLP-1 Friendly" as an unqualified badge | "20g+ Protein • ≤30g Net Carbs" (state the threshold) | A qualifier the guest can verify beats a claim they must trust |
+| "Ozempic menu" / "Wegovy menu" | "Protein-Forward menu" / "Good Fit menu" | Never attach a brand-name drug to a menu |
+
+**Rule of thumb:** state the macronutrient *fact*, never the bodily *effect*. Any surface that names GLP-1 or weight management carries the "Talk to your doctor" footer. If a line would need a clinical study to defend it in a 30-second deposition (Step 12), it does not ship.
 
 ## Test-Market and Rollout Plan
 - **Phase 1 (Weeks 1-4):** 8 stores in Charlotte and Phoenix, kiosk and app callouts only.
